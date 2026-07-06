@@ -49,8 +49,7 @@ const ContactInfo = () => {
                     Careers
                   </span>
                   <p className='text-DeepOcean font-normal text-lg max-w-80 pt-3 pb-7 dark:text-white/50'>
-                    Sit ac ipsum leo lorem magna nunc mattis maecenas non
-                    vestibulum
+                    Join Our Growing Engineering Team
                   </p>
                 </div>
                 <div>

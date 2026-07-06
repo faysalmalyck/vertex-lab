@@ -40,19 +40,18 @@ const Footer: FC = () => {
                 <p className='text-base font-bold text-white'>Phone</p>
                 <Link
                   href='tel:+(923) 0555 2772'
-                  className='text-2xl text-white/50 hover:text-white'>
-                  +(923) 0555 2772
+                  className='text-lg text-white/50 hover:text-white'>
+                  +92-305-5552772
                 </Link>
               </div>
               <div className='sm:block flex items-center gap-3'>
                 <p className='text-base font-bold text-white'>Email</p>
                 <Link
-                  href='mailto:faysalmalick1@gmail.com'
-                  className='text-2xl text-white/50 hover:text-white'>
-                  fayalmalick1@gmail.com
-
+                  href='mailto:faysalmalick11@gmail.com'
+                  className='text-lg text-white/50 hover:text-white'>
+                  faysalmalick11@gmail.com
                 </Link>
-
+                
               </div>
               <div>
                 <ul className='flex items-center gap-3 mt-[1.875rem]'>

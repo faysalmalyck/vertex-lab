@@ -24,21 +24,21 @@ const Contactform = () => {
             <div className='grid grid-cols-6 pb-12 border-b border-dark_border '>
               <div className='col-span-3'>
                 <span className='text-white/50 text-lg'>Phone</span>
-                <p className='bg-transparent border-0 text-white text-lg'>
-                  +9230-5555-2772
+                <p className='bg-transparent border-0 text-white text-l'>
+                  +92-305-5552772
                 </p>
               </div>
 
               <div className='col-span-3'>
                 <span className='text-white/50 text-lg'>Email</span>
-                <p className='bg-transparent border-0 text-white text-lg'>
-                  faysalmalick1@gmail.com
+                <p className='bg-transparent border-0 text-white text-l'>
+                  faysalmalick11@gmail.com
                 </p>
               </div>
               <div className='col-span-6 pt-8'>
-                <span className='text-white/50 text-lg'>Location</span>
-                <p className='bg-transparent border-0 text-white text-lg'>
-                  Office 194A street 7 I-10/3 Islamabad, Pakistan
+                <span className='text-white/50 text-lg'>Address</span>
+                <p className='bg-transparent border-0 text-white text-l'>
+                  Office No. 194-A, Street No. 7, Sector I-10/3, Islamabad 44000, Pakistan
                 </p>
               </div>
             </div>

@@ -29,7 +29,7 @@ const Counter = ({ isColorMode }: { isColorMode: Boolean }) => {
               <span className='text-5xl font-semibold text-midnight_text dark:text-white'>
                 {item.value}
               </span>
-              <p className='text-base text-grey text-center max-w-[17.8125rem] w-full dark:text-white/50'>
+              <p className='text-l text-grey text-center max-w-[17.8125rem] w-full dark:text-white/50'>
                 {item.description}
               </p>
             </div>

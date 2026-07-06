@@ -18,19 +18,19 @@ const Location = () => {
                 </h2>
               </div>
               <div className='col-span-3'>
-                <p className='sm:text-2xl text-xl text-IceBlue font-normal max-w-64 leading-7 text-white/50'>
+                <p className='sm:text-xl text-l text-IceBlue font-normal max-w-64 leading-7 text-white/50'>
                   Office # 101, 1st Floor, Al-Qadir Heights, Main Jinnah Avenue, Blue Area, Islamabad, Pakistan
                 </p>
               </div>
               <div className='col-span-3'>
                 <Link
                   href='mailto:faysalmalick1@gmail.com'
-                  className='sm:text-2xl text-xl text-white font-medium '>
-                  faysalmalick1@gmail.com
+                  className='sm:text-xl text-l text-white font-medium '>
+                  faysalmalick11@gmail.com
                 </Link>
                 <Link
                   href='tel:+923055552772'
-                  className='sm:text-2xl text-xl text-white/80 flex items-center gap-2 hover:text-opacity-100 w-fit'>
+                  className='sm:text-xl text-l text-white/80 flex items-center gap-2 hover:text-opacity-100 w-fit'>
                   <span className='text-white/40!'>Call</span>
                   +(92)-305-5552772
                 </Link>
@@ -43,19 +43,19 @@ const Location = () => {
                 </h2>
               </div>
               <div className='col-span-3'>
-                <p className='sm:text-2xl text-xl text-white/50 font-normal max-w-64 leading-7'>
-                  Office # 194A,Street 7 I-10-/3 Islamabad, Pakistan
+                <p className='sm:text-xl text-sm text-white/50 font-normal max-w-64 leading-7'>
+                  Office No. 194-A, Street No. 7, Sector I-10/3, Islamabad 44000, Pakistan
                 </p>
               </div>
               <div className='col-span-3'>
                 <Link
                   href='mailto:barkatullahkhan120136@gmail.com'
-                  className='sm:text-2xl text-xl text-white font-medium '>
-                  barkatullahkhan120136@gmail.com
+                  className='sm:text-xl text-l text-white font-medium '>
+                  barkatullahkhan@gmail.com
                 </Link>
                 <Link
                   href='tel:=923406087431'
-                  className='sm:text-2xl text-white/80 text-xl text-IceBlue flex items-center gap-2 hover:text-opacity-100 w-fit'>
+                  className='sm:text-xl text-white/80 text-lg text-IceBlue flex items-center gap-2 hover:text-opacity-100 w-fit'>
                   <span className='text-white/40!'>Call</span>
                   +(92)-340-6087431
                 </Link>

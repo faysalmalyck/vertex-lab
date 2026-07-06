@@ -28,7 +28,7 @@ export const count = [
 ];
 
 export const Progress = [
-    { title: 'Custom business Websites', Progress: 95 },
+    { title: 'Custom business Websites', Progress: 90 },
     { title: 'Saas Application development', Progress: 84 },
     { title: 'EdTech', Progress: 90 },
     { title: 'AI Integrations (OpenAI,Langchain,MCP)', Progress: 89 },
@@ -55,83 +55,83 @@ export const Servicebox = [
 
 export const portfolioinfo = [
     {
-        image: getImgPath('/images/portfolio/cozycasa.png'),
-        alt: 'Portfolio',
-        title: 'Cozycasa',
-        slug: 'Cozycasa',
-        info: 'Designation',
-        Class: 'md:mt-0'
-    },
-    {
-        image: getImgPath('/images/portfolio/mars.png'),
-        alt: 'Portfolio',
-        title: 'Mars',
-        slug: 'Mars',
-        info: 'Designation',
-        Class: 'md:mt-24'
-    },
-    {
-        image: getImgPath('/images/portfolio/humans.png'),
-        alt: 'Portfolio',
-        title: 'Everyday Humans',
-        slug: 'everyday-humans',
-        info: 'Designation',
-        Class: 'md:mt-0'
-    },
-    {
-        image: getImgPath('/images/portfolio/roket-squred.png'),
-        alt: 'Portfolio',
-        title: 'Rocket Squared',
-        slug: 'rocket-squared',
-        info: 'Designation',
-        Class: 'md:mt-24'
-    },
-    {
-        image: getImgPath('/images/portfolio/panda-logo.png'),
-        alt: 'Portfolio',
-        title: 'Panda Logo',
-        slug: 'panda-logo',
-        info: 'Designation',
-        Class: 'md:mt-0'
-    },
-    {
-        image: getImgPath('/images/portfolio/humans.png'),
-        alt: 'Portfolio',
-        title: 'Fusion Dynamics',
+        image: getImgPath('/images/portfolio/Dierk.png'),
+        alt: 'Dierks Company',
+        title: 'Dierks Company',
         slug: 'fusion-dynamics',
-        info: 'Designation',
+        info: 'A digital platform for a legal and strategy consultancy specializing in regulatory compliance & risk management',
         Class: 'md:mt-0'
     },
     {
-        image: getImgPath('/images/portfolio/cozycasa.png'),
+        image: getImgPath('/images/portfolio/VanGuard.png'),
         alt: 'Portfolio',
-        title: 'InnovateX Ventures',
+        title: 'VanGuard',
+        slug: 'rocket-squared',
+        info: 'A cross platform web and mobile application for investment tracking savings management and real time financial monitoring',
+        Class: 'md:mt-24'
+    },
+    {
+      image: getImgPath('/images/portfolio/Doctor.png'),
+        alt: 'Portfolio',
+        title: 'Doctor SaaS',
+        slug: 'Mars',
+        info: 'An AI Powered SaaS platform that empowers healthcare professionals with smart diagnostics',
+        Class: 'md:mt-24'
+    },
+    {
+        image: getImgPath('/images/portfolio/Gazalle.png'),
+        alt: 'Portfolio',
+        title: 'Gazelle',
+        slug: 'Cozycasa',
+        info: 'Gazelle is the leading reCommerce that buys and sells pre-owned consumer electronics ',
+        Class: 'md:mt-0'
+    },
+    {
+        image: getImgPath('/images/portfolio/ServCorp.png'),
+        alt: 'ServCorp',
+        title: 'ServCorp',
+        slug: 'fusion-dynamics',
+        info: 'A modern workspace platform offering coworking spaces, virtual offices, meeting rooms, and business infrastructure',
+        Class: 'md:mt-0'
+    },
+    {
+        image: getImgPath('/images/portfolio/Haze.png'),
+        alt: 'Portfolio',
+        title: 'Haze & Hue',
+        slug: 'rocket-squared',
+        info: 'An online vape store offering e cigarettes, vape devices, and accessories',
+        Class: 'md:mt-24'
+    },
+    {
+        image: getImgPath('/images/portfolio/Jubilee.png'),
+        alt: 'Portfolio',
+        title: 'Jubilee Gift Shop',
         slug: 'innovate-x-ventures',
-        info: 'Designation',
+        info: 'A Shopify powered online gift shop offering a seamless shopping experience',
         Class: 'md:mt-24'
     },
     {
-        image: getImgPath('/images/portfolio/mars.png'),
+        image: getImgPath('/images/portfolio/Beauty.png'),
         alt: 'Portfolio',
-        title: 'Nebula Holdings',
-        slug: 'nebula-holdings',
-        info: 'Designation',
+        title: 'Beautox Bar',
+        slug: 'rocket-squared',
+        info: 'A premium beauty and aesthetic clinic website with online booking',
+        Class: 'md:mt-24'
+    },
+    {
+        image: getImgPath('/images/portfolio/AnganStay.png'),
+        alt: 'Portfolio',
+        title: 'AnganStay',
+        slug: 'everyday-humans',
+        info: 'A modern platform enabling property owners & renters to navigate through property listings',
         Class: 'md:mt-0'
     },
     {
-        image: getImgPath('/images/portfolio/panda-logo.png'),
+       image: getImgPath('/images/portfolio/DCI.png'),
         alt: 'Portfolio',
-        title: 'Summit Partners',
-        slug: 'summit-partners',
-        info: 'Designation',
-        Class: 'md:mt-24'
-    },
-    {
-        image: getImgPath('/images/portfolio/roket-squred.png'),
-        alt: 'Portfolio',
-        title: 'Apex Strategies',
-        slug: 'apex-strategies',
-        info: 'Designation',
+        title: 'DCI',
+        slug: 'panda-logo',
+        info: 'A Jamican Consortium serving businesses and governments by delivering innovative solutionsto regional needs',
         Class: 'md:mt-0'
     },
 

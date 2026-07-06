@@ -19,11 +19,10 @@ const Hero = () => {
             </span>
           </div>
           <h1 className='text-midnight_text font-bold dark:text-white text-4xl  md:text-5xl md:leading-[1.15]'>
-            Better Solutions For Your Business
+            Empowering Businesses Through Intelligent Software
           </h1>
           <p className='text-grey dark:text-white/70 text-xl font-semibold'>
-            We are a team of experienced professionals who are passionate about
-            helping businesses succeed.
+            Our team combines technical expertise and industry experience to deliver secure, scalable, and business driven software solutions.
           </p>
           <a
             href='/contact'
@@ -77,7 +76,7 @@ const Hero = () => {
             height={150}
             quality={100}
             className='rounded-4xl'
-            style={{ width: '100%', height: 'auto' }}
+            style={{ width: '85%', height: 'auto' }}
           />
         </div>
       </div>
