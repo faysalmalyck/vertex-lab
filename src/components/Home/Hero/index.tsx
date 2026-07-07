@@ -18,7 +18,7 @@ const Hero = () => {
             <Sparkles className='h-4 w-4' />
             <span>2026 software agency</span>
           </div>
-          <h1 className='text-midnight_text font-black dark:text-white text-5xl md:text-6xl lg:text-7xl leading-[0.98] tracking-normal'>
+          <h1 className='text-midnight_text font-black dark:text-white text-5xl md:text-6xl lg:text-5xl leading-[0.98] tracking-normal'>
             Intelligent software for ambitious brands.
           </h1>
           <p className='premium-copy max-w-2xl'>
@@ -38,7 +38,7 @@ const Hero = () => {
             </Link>
           </div>
           <div className='grid w-full max-w-xl grid-cols-1 gap-3 pt-2 sm:grid-cols-3'>
-            {['SaaS builds', 'AI integrations', 'Cloud delivery'].map((item) => (
+            {['SaaS builds', 'AI Integrations', 'Cloud & DevOps '].map((item) => (
               <div key={item} className='glass-card flex items-center gap-2 rounded-2xl px-3 py-3 text-sm font-semibold text-slate-700 dark:text-white/80'>
                 <CheckCircle2 className='h-4 w-4 text-success' />
                 {item}
@@ -99,7 +99,7 @@ const Hero = () => {
               {[
                 ['30M+', 'Revenue'],
                 ['92%', 'DevOps'],
-                ['4.6', 'Rating'],
+                ['4.8', 'Rating'],
               ].map(([value, label]) => (
                 <div key={label}>
                   <p className='text-lg font-black text-midnight_text dark:text-white'>{value}</p>

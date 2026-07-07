@@ -54,9 +54,9 @@ const Footer: FC = () => {
               <div className="mb-8 group">
                 <p className="text-xs text-white/50 mb-1 font-medium">Email</p>
                 <Link
-                  href="mailto:faysalmalick11@gmail.com"
+                  href="mailto:faysal.malick@icloud.com"
                   className="text-base text-white/80 transition-colors duration-200 group-hover:text-primary font-medium tracking-wide break-all">
-                  faysalmalick11@gmail.com
+                  faysal.malick@icloud.com
                 </Link>
               </div>
 
@@ -116,30 +116,35 @@ const Footer: FC = () => {
       </div>
 
       {/* Footer Bottom Bar */}
-      <div className="relative border-t border-solid border-white/10 py-8">
-        <div className="container mx-auto max-w-6xl px-4 flex flex-col md:flex-row justify-between items-center gap-6">
-          <nav>
-            <ul className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
-              {['About', 'Services', 'Portfolio', 'Blog', 'Contact'].map((item) => (
-                <li key={item}>
-                  <Link href={`/#${item.toLowerCase()}`} className="text-sm font-medium text-white/50 transition-colors duration-200 hover:text-white">
-                    {item}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <p className="text-xs text-white/40 text-center md:text-start font-medium tracking-wide">
-            © All rights reserved. Made & Distributed by{' '}
+      <div className="border-t border-white/10">
+  <div className="container mx-auto flex max-w-6xl flex-col items-center px-4 py-10">
+    <nav aria-label="Footer Navigation">
+      <ul className="mb-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
+        {['About', 'Services', 'Portfolio', 'Blog', 'Contact'].map((item) => (
+          <li key={item}>
             <Link
-              href="https://www.facebook.com/share/195ipqLEym/?mibextid=wwXIfr"
-              target="_blank"
-              className="text-white/60 font-semibold transition-colors duration-200 hover:text-primary">
-              Faysal Mushtaq
+              href={`/#${item.toLowerCase()}`}
+              className="relative text-sm font-medium text-white/50 transition-all duration-300 hover:text-white after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
+            >
+              {item}
             </Link>
-          </p>
-        </div>
-      </div>
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <p className="max-w-2xl text-center text-xs font-medium leading-6 tracking-wide text-white/40">
+      © {new Date().getFullYear()} All rights reserved. Made &amp; Distributed by{' '}
+      <Link
+        href="https://www.facebook.com/share/195ipqLEym/?mibextid=wwXIfr"
+        target="_blank"
+        className="font-semibold text-white/70 transition-colors duration-300 hover:text-primary"
+      >
+        Faysal Mushtaq
+      </Link>
+    </p>
+  </div>
+</div>
     </footer>
   )
 }

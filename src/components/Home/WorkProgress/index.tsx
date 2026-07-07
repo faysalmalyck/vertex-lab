@@ -69,53 +69,59 @@ const ProgressWork = ({ isColorMode }: ProgressWorkProps) => {
               businesses turn ideas into scalable, production ready systems.
             </p>
 
-            <div className="space-y-3 pt-8">
-              {progressValues.map((item, index) => (
-                <div
-                  key={item.title}
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                  className="group transform-gpu transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-1"
-                >
-                  <div className="glass-card relative overflow-hidden rounded-2xl px-5 py-4 transition-all duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-primary/20 hover:shadow-[0_20px_50px_rgba(15,23,42,0.12)] dark:hover:border-primary/30">
+            <div className="space-y-3 pt-6">
+  {progressValues.map((item, index) => (
+    <div
+      key={item.title}
+      data-aos="fade-up"
+      data-aos-delay={index * 100}
+      className="group transition-all duration-500"
+    >
+      <div className="glass-card relative overflow-hidden rounded-xl border border-white/10 px-4 py-3 transition-all duration-500 hover:-translate-y-1 hover:border-primary/25 hover:shadow-[0_16px_40px_rgba(59,130,246,0.12)]">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/[0.04] via-transparent to-transparent opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
 
-                    <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-primary/5 opacity-0 transition-opacity duration-700 group-hover:opacity-100 dark:from-white/5"></div>
+        <div className="relative z-10">
+          {/* Header */}
+          <div className="mb-2.5 flex items-center justify-between">
+            <h4 className="text-sm font-semibold tracking-tight text-midnight_text dark:text-white">
+              {item.title}
+            </h4>
 
-                    <div className="relative z-10">
+            <ArrowUpRight className="h-3.5 w-3.5 text-primary opacity-0 transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:opacity-100" />
+          </div>
 
-                      <div className="mb-3 flex items-center justify-between gap-4">
-                        <h4 className="text-[15px] font-bold tracking-tight text-midnight_text dark:text-white">
-                          {item.title}
-                        </h4>
-                        <ArrowUpRight className="h-4 w-4 text-primary opacity-0 transition-all duration-300 group-hover:opacity-100" />
-                      </div>
+          {/* Progress Bar */}
+          <div
+            role="progressbar"
+            aria-label={item.title}
+            aria-valuenow={item.Progress}
+            aria-valuemin={0}
+            aria-valuemax={100}
+            className="relative h-3 overflow-hidden rounded-full bg-slate-200/70 p-[1.5px] ring-1 ring-white/10 dark:bg-slate-900/80"
+          >
+            <div
+              className="relative flex h-full min-w-[34px] items-center justify-end overflow-hidden rounded-full bg-gradient-to-r from-primary via-Sky-blue-mist to-success shadow-[0_0_12px_rgba(59,130,246,0.35)] transition-all duration-1000 ease-out"
+              style={{ width: `${Math.max(item.Progress, 12)}%` }}
+            >
+              {/* Shine */}
+              <div className="absolute inset-0 overflow-hidden rounded-full">
+                <div className="absolute -left-1/2 h-full w-1/2 -skew-x-12 bg-white/20 animate-[shine_2.5s_linear_infinite]" />
+              </div>
 
-                      <div
-                        role="progressbar"
-                        aria-label={item.title}
-                        aria-valuenow={item.Progress}
-                        aria-valuemin={0}
-                        aria-valuemax={100}
-                        className="relative mt-1 h-3 overflow-hidden rounded-full bg-slate-200/80 dark:bg-white/10"
-                      >
-                        <div
-                          className="animate-gradient-pan relative flex h-full items-center justify-end rounded-full bg-gradient-to-r from-primary via-Sky-blue-mist to-success pr-3 transition-all duration-1000 ease-[cubic-bezier(0.22,1,0.36,1)]"
-                          style={{ width: `${item.Progress}%` }}
-                        >
-                          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+              {/* Gloss */}
+              <div className="absolute inset-x-0 top-0 h-1/2 bg-gradient-to-b from-white/20 to-transparent" />
 
-                          <span className="absolute -top-7 right-0 text-xs font-black tracking-wide text-primary dark:text-white">
-                            {item.Progress}%
-                          </span>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-              ))}
+              {/* Percentage */}
+              <span className="relative z-10 px-1.5 text-[8px] font-semibold text-white">
+                {item.Progress}%
+              </span>
             </div>
-
+          </div>
+        </div>
+      </div>
+    </div>
+  ))}
+</div>
           </div>
         </div>
       </div>

@@ -22,7 +22,7 @@ const Contactform = () => {
               <span className="h-2 w-2 rounded-full bg-success" />
               <span>build everything</span>
             </div>
-            <h2 className="py-10 text-4xl font-black leading-tight text-white sm:text-5xl">
+            <h2 className="py-10 text-3xl font-black leading-tight text-white sm:text-5xl">
               Let&apos;s discuss your project and take it to the next level.
             </h2>
 
@@ -38,7 +38,7 @@ const Contactform = () => {
                 <Mail className="mb-4 h-5 w-5 text-primary" />
                 <span className="text-lg text-white/50">Email</span>
                 <p className="text-l border-0 bg-transparent text-white">
-                  faysalmalick11@gmail.com
+                  faysal.malick@icloud.com
                 </p>
               </div>
               <div className="glass-card rounded-2xl p-5 sm:col-span-2">

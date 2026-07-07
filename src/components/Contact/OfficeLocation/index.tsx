@@ -7,7 +7,7 @@ const offices = [
     title: 'Islamabad I',
     tag: 'Headquarters',
     address: 'Office No. 101, First Floor, Al-Qadir Heights, Main Jinnah Avenue, Blue Area, Islamabad, Pakistan',
-    email: 'faysalmalick11@gmail.com',
+    email: 'faysal.malick@icloud.com',
     phone: '+923055552772',
     displayPhone: '+(92) 305 555 2772',
     map: 'https://maps.google.com/?q=Blue+Area+Islamabad',

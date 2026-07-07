@@ -28,7 +28,7 @@ const Counter = ({ isColorMode }: { isColorMode: Boolean }) => {
                   unoptimized
                 />
               </div>
-              <span className='text-5xl font-black tracking-tight text-midnight_text dark:text-white'>
+              <span className='text-3xl font-black tracking-tight text-midnight_text dark:text-white'>
                 {item.value}
               </span>
               <p className='text-base leading-7 text-grey text-center max-w-[17.8125rem] w-full dark:text-white/55'>

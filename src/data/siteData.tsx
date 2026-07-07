@@ -3,7 +3,7 @@ import { getImgPath } from "@/utils/image";
 export const count = [
   {
     icon: getImgPath("/images/counter/star.svg"),
-    value: "4.6",
+    value: "4.8",
     description: "Out of 5 stars from 3896 reviews on Google platform",
   },
   {
@@ -19,10 +19,10 @@ export const count = [
 ];
 
 export const Progress = [
-  { title: "Custom business Websites", Progress: 90 },
-  { title: "Saas Application development", Progress: 84 },
-  { title: "EdTech", Progress: 90 },
-  { title: "AI Integrations (OpenAI,Langchain,MCP)", Progress: 89 },
+  { title: "Custom business Websites", Progress: 99 },
+  { title: "Saas Application development", Progress: 85 },
+  { title: "EdTech", Progress: 80 },
+  { title: "AI Integrations (OpenAI,Langchain,MCP)", Progress: 90 },
   { title: "Cloud Deployment & DevOps", Progress: 92 },
 ];
 
