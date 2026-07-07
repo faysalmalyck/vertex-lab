@@ -1,12 +1,4 @@
-# Venus Free Next.js Website Template
-
-#### Preview
-
-- [Demo](https://themewagon.github.io/venus-nextjs/)
-
-#### Download
-
-- [Download from ThemeWagon](https://themewagon.com/themes/venus-nextjs/)
+# Venus Next.js Website
 
 ## Getting Started
 
@@ -37,14 +29,7 @@ bun dev
 ## Author
 
 ```
-Design and code is completely written by Getnextjstemplates and development team.
+Design and code is completely written by Faysal Malick
 ```
 
 ## License
-
-- Design and Code is Copyright &copy; [codescandy](https://getnextjstemplates.com/)
-- Licensed cover under [MIT]
-- Distributed by [ThemeWagon](https://themewagon.com)
-# Venus-Tech
-# Venus
-# Venus
