@@ -64,6 +64,8 @@ export const portfolioinfo = [
     slug: "fusion-dynamics",
     info: "A digital platform for a legal and strategy consultancy specializing in regulatory compliance & risk management",
     Class: "md:mt-0",
+    link: "https://www.dierks.company/",
+
   },
   {
     image: getImgPath("/images/portfolio/VanGuard.png"),
@@ -72,6 +74,7 @@ export const portfolioinfo = [
     slug: "rocket-squared",
     info: "A cross platform web and mobile application for investment tracking savings management and real time financial monitoring",
     Class: "md:mt-24",
+    link: "https://investor.vanguard.com/",
   },
   {
     image: getImgPath("/images/portfolio/Doctor.png"),
@@ -80,6 +83,7 @@ export const portfolioinfo = [
     slug: "Mars",
     info: "An AI Powered SaaS platform that empowers healthcare professionals with smart diagnostics",
     Class: "md:mt-24",
+    link: "https://clinicos.codeshop.biz/dashboard/",
   },
   {
     image: getImgPath("/images/portfolio/Gazalle.png"),
@@ -97,6 +101,7 @@ export const portfolioinfo = [
     slug: "fusion-dynamics",
     info: "A modern workspace platform offering coworking spaces, virtual offices, meeting rooms, and business infrastructure",
     Class: "md:mt-0",
+    link: "https://www.servcorp.ae/en/",
   },
   {
     image: getImgPath("/images/portfolio/Haze.png"),
@@ -105,6 +110,7 @@ export const portfolioinfo = [
     slug: "rocket-squared",
     info: "An online vape store offering e cigarettes, vape devices, and accessories",
     Class: "md:mt-24",
+    link: "https://hazeandhues.com/",
   },
   {
     image: getImgPath("/images/portfolio/Jubilee.png"),
@@ -113,6 +119,7 @@ export const portfolioinfo = [
     slug: "innovate-x-ventures",
     info: "A Shopify powered online gift shop offering a seamless shopping experience",
     Class: "md:mt-24",
+    link: "https://jubileegiftshop.com/",
   },
   {
     image: getImgPath("/images/portfolio/Beauty.png"),
@@ -121,7 +128,8 @@ export const portfolioinfo = [
     slug: "rocket-squared",
     info: "A premium beauty and aesthetic clinic website with online booking",
     Class: "md:mt-24",
-  },
+    link: "https://www.beautoxbar.com/",
+    },
   {
     image: getImgPath("/images/portfolio/AnganStay.png"),
     alt: "Portfolio",
@@ -129,6 +137,7 @@ export const portfolioinfo = [
     slug: "everyday-humans",
     info: "A modern platform enabling property owners & renters to navigate through property listings",
     Class: "md:mt-0",
+    link: "https://development.anganstay.com/",
   },
   {
     image: getImgPath("/images/portfolio/DCI.png"),
@@ -137,5 +146,6 @@ export const portfolioinfo = [
     slug: "panda-logo",
     info: "A Jamican Consortium serving businesses and governments by delivering innovative solutionsto regional needs",
     Class: "md:mt-0",
+    link: "https://dcisolutions.com/",
   },
 ];
