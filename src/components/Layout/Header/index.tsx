@@ -6,10 +6,7 @@ import { headerData } from "../Header/Navigation/menuData";
 import Logo from "./Logo";
 import HeaderLink from "../Header/Navigation/HeaderLink";
 import MobileHeaderLink from "../Header/Navigation/MobileHeaderLink";
-import Signin from "@/components/Auth/SignIn";
-import SignUp from "@/components/Auth/SignUp";
 import { useTheme } from "next-themes";
-import { Icon } from "@iconify/react/dist/iconify.js";
 import { SuccessfullLogin } from "@/components/Auth/AuthDialog/SuccessfulLogin";
 import { FailedLogin } from "@/components/Auth/AuthDialog/FailedLogin";
 import { UserRegistered } from "@/components/Auth/AuthDialog/UserRegistered";
@@ -21,12 +18,6 @@ const Header: React.FC = () => {
 
   const [navbarOpen, setNavbarOpen] = useState(false);
   const [sticky, setSticky] = useState(false);
-  const [isSignInOpen, setIsSignInOpen] = useState(false);
-  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
-
-  const navbarRef = useRef<HTMLDivElement>(null);
-  const signInRef = useRef<HTMLDivElement>(null);
-  const signUpRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
 
   const handleScroll = () => {
@@ -34,18 +25,6 @@ const Header: React.FC = () => {
   };
 
   const handleClickOutside = (event: MouseEvent) => {
-    if (
-      signInRef.current &&
-      !signInRef.current.contains(event.target as Node)
-    ) {
-      setIsSignInOpen(false);
-    }
-    if (
-      signUpRef.current &&
-      !signUpRef.current.contains(event.target as Node)
-    ) {
-      setIsSignUpOpen(false);
-    }
     if (
       mobileMenuRef.current &&
       !mobileMenuRef.current.contains(event.target as Node) &&
@@ -62,31 +41,31 @@ const Header: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [navbarOpen, isSignInOpen, isSignUpOpen]);
+  }, [navbarOpen]);
 
   const path = usePathname();
 
   useEffect(() => {
-    if (isSignInOpen || isSignUpOpen || navbarOpen) {
+    if (navbarOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "";
     }
-  }, [isSignInOpen, isSignUpOpen, navbarOpen]);
+  }, [navbarOpen]);
 
   const authDialog = useContext(AuthDialogContext);
 
   return (
     <header
-      className={`fixed h-24 top-0 py-1 z-50 w-full dark:bg-transparent transition-all ${
+      className={`fixed top-0 z-50 w-full px-3 py-4 transition-all duration-500 ${
         sticky
-          ? "shadow-lg bg-white dark:shadow-dark-md dark:bg-darklight!"
-          : "shadow-none"
+          ? "bg-white/75 shadow-[0_16px_60px_rgba(15,23,42,0.10)] backdrop-blur-2xl dark:bg-darklight/80 dark:shadow-dark-md"
+          : "bg-transparent"
       }`}
     >
-      <div className="container mx-auto max-w-6xl flex items-center justify-between p-6">
+      <div className="container mx-auto flex max-w-6xl items-center justify-between rounded-full border border-slate-950/10 bg-white/75 px-4 py-3 shadow-[0_18px_70px_rgba(15,23,42,0.10)] backdrop-blur-2xl dark:border-white/[0.12] dark:bg-white/[0.06]">
         <Logo />
-        <nav className="hidden lg:flex grow items-center justify-center gap-6">
+        <nav className="hidden grow items-center justify-center gap-8 lg:flex">
           {headerData.map((item, index) => (
             <HeaderLink key={index} item={item} />
           ))}
@@ -95,7 +74,7 @@ const Header: React.FC = () => {
           <button
             aria-label="Toggle theme"
             onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-            className="flex h-8 w-8 items-center justify-center text-body-color duration-300 dark:text-white"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200/80 bg-white/80 text-body-color shadow-sm duration-300 hover:-translate-y-0.5 hover:border-primary/30 hover:text-primary dark:border-white/10 dark:bg-white/10 dark:text-white"
           >
             <svg
               viewBox="0 0 16 16"
@@ -119,16 +98,13 @@ const Header: React.FC = () => {
           </button>
           <Link
             href="/contact"
-            className="hidden lg:block bg-transparent border border-primary text-primary px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white"
-            onClick={() => {
-              setIsSignInOpen(true);
-            }}
+            className="premium-gradient-button hidden rounded-full px-5 py-3 text-sm font-bold hover:-translate-y-0.5 lg:block"
           >
             Contact us
           </Link>
           <button
             onClick={() => setNavbarOpen(!navbarOpen)}
-            className="block lg:hidden p-2 rounded-lg"
+            className="block rounded-full border border-slate-200/80 bg-white/80 p-3 shadow-sm lg:hidden dark:border-white/10 dark:bg-white/10"
             aria-label="Toggle mobile menu"
           >
             <span className="block w-6 h-0.5 bg-black dark:bg-white"></span>
@@ -137,18 +113,16 @@ const Header: React.FC = () => {
           </button>
         </div>
       </div>
-      {navbarOpen && (
-        <div className="fixed top-0 left-0 w-full h-full bg-black/50 z-40" />
-      )}
+      {navbarOpen && <div className="fixed left-0 top-0 z-40 h-full w-full bg-slate-950/60 backdrop-blur-sm" />}
 
       <div
         ref={mobileMenuRef}
-        className={`lg:hidden fixed top-0 right-0 h-full w-full bg-white dark:bg-darkmode shadow-lg transform transition-transform duration-300 max-w-xs ${
+        className={`fixed right-0 top-0 z-50 h-full w-full max-w-sm transform border-l border-white/20 bg-white/90 shadow-2xl backdrop-blur-2xl transition-transform duration-500 lg:hidden dark:bg-darkmode/95 ${
           navbarOpen ? "translate-x-0" : "translate-x-full"
-        } z-50`}
+        }`}
       >
-        <div className="flex items-center justify-between p-4">
-          <h2 className="text-lg font-bold text-midnight_text dark:text-white">
+        <div className="flex items-center justify-between border-b border-slate-200/70 p-5 dark:border-white/10">
+          <h2 className="text-lg font-black text-midnight_text dark:text-white">
             Menu
           </h2>
           <button
@@ -173,30 +147,24 @@ const Header: React.FC = () => {
             </svg>
           </button>
         </div>
-        <nav className="flex flex-col items-start p-4">
+        <nav className="flex flex-col items-start gap-2 p-5">
           {headerData.map((item, index) => (
             <MobileHeaderLink key={index} item={item} />
           ))}
-          <div className="mt-4 flex flex-col gap-4 w-full">
+          <div className="mt-5 flex w-full flex-col gap-3">
             <Link
-              href="#"
-              className="bg-transparent border border-primary text-primary px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white"
-              onClick={() => {
-                setIsSignInOpen(true);
-                setNavbarOpen(false);
-              }}
+              href="/contact"
+              className="rounded-2xl border border-primary/30 px-4 py-3 text-center font-bold text-primary transition-all duration-300 hover:border-Sky-blue-mist/50 hover:bg-primary/10 hover:text-primary dark:text-white"
+              onClick={() => setNavbarOpen(false)}
             >
-              Sign In
+              Contact us
             </Link>
             <Link
-              href="#"
-              className="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700"
-              onClick={() => {
-                setIsSignUpOpen(true);
-                setNavbarOpen(false);
-              }}
+              href="/portfolio"
+              className="premium-gradient-button rounded-2xl px-4 py-3 text-center font-bold"
+              onClick={() => setNavbarOpen(false)}
             >
-              Sign Up
+              View work
             </Link>
           </div>
         </nav>

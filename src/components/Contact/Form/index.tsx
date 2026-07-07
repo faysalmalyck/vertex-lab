@@ -99,7 +99,7 @@ const ContactForm = () => {
                 <div className='mx-0 my-2.5 w-full'>
                   <Link
                     href='#'
-                    className='bg-primary rounded-lg text-white py-4 px-8 mt-4 inline-block hover:bg-blue-700'
+                    className='premium-gradient-button rounded-lg py-4 px-8 mt-4 inline-block'
                     type='submit'>
                     Make an appointment
                   </Link>

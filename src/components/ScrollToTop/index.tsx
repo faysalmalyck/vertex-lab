@@ -34,7 +34,7 @@ export default function ScrollToTop() {
       <div className="flex items-center gap-2.5">
         <Link
           href={"/contact"}
-          className="hidden lg:block bg-primary text-sm hover:bg-blue-700 text-white px-4 py-3.5 leading-none rounded-lg font-medium text-nowrap"
+          className="premium-gradient-button hidden lg:block text-sm px-4 py-3.5 leading-none rounded-lg font-medium text-nowrap"
         >
           Get Online Consultation
         </Link>
@@ -42,7 +42,7 @@ export default function ScrollToTop() {
           <div
             onClick={scrollToTop}
             aria-label="scroll to top"
-            className="back-to-top flex h-10 w-10 cursor-pointer items-center justify-center rounded-md bg-[#102C46] text-white shadow-md transition duration-300 ease-in-out hover:bg-dark"
+            className="back-to-top flex h-10 w-10 cursor-pointer items-center justify-center rounded-md bg-darklight text-white shadow-md transition duration-300 ease-in-out hover:bg-primary"
           >
             <span className="mt-[6px] h-3 w-3 rotate-45 border-l border-t border-white"></span>
           </div>

@@ -23,7 +23,7 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <Link href={item.href} className={`text-base flex py-2 font-normal hover:text-primary dark:hover:text-primary text-black dark:text-white  ${path === item.href ? 'text-primary dark:text-primary!' : '  '} ${path.startsWith("/blog") && item.href==="/blog"?"text-primary! dark:text-primary!":null} ${path.startsWith("/portfolio") && item.href==="/portfolio"?"text-primary! dark:text-primary!":null}`}>
+      <Link href={item.href} className={`premium-link-line flex py-2 text-sm font-semibold text-slate-700 transition-colors duration-300 hover:text-primary dark:text-white/75 dark:hover:text-white ${path === item.href ? 'text-primary dark:text-white after:w-full' : ''} ${path.startsWith("/blog") && item.href==="/blog"?"text-primary! dark:text-white! after:w-full":null} ${path.startsWith("/portfolio") && item.href==="/portfolio"?"text-primary! dark:text-white! after:w-full":null}`}>
         {item.label}
         {item.submenu && (
           <svg xmlns="http://www.w3.org/2000/svg" width="1.5em" height="1.5em" viewBox="0 0 24 24">
@@ -33,7 +33,7 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
       </Link>
       {submenuOpen && (
         <div
-          className={`absolute py-2 left-0 mt-0.5 top-8 w-60 bg-white dark:bg-darklight shadow-lg dark:shadow-dark-md rounded-lg `}
+          className={`absolute left-0 top-9 mt-2 w-60 rounded-2xl border border-slate-200/70 bg-white/90 py-2 shadow-2xl backdrop-blur-xl dark:border-white/10 dark:bg-darklight/90 dark:shadow-dark-md`}
           data-aos="fade-up"
           data-aos-duration="400"
         >
@@ -44,7 +44,7 @@ const HeaderLink: React.FC<{ item: HeaderItem }> = ({ item }) => {
               className={`block px-4 py-2 text-[15px]  ${
                 path === subItem.href
                   ? "bg-primary text-white"
-                  : "text-black hover:bg-gray-200 dark:hover:bg-midnight_text dark:text-white hover:text-dark dark:hover:text-white"
+                  : "text-slate-700 hover:bg-primary/10 hover:text-primary dark:text-white/80 dark:hover:bg-white/10 dark:hover:text-white"
               }`}
             >
               {subItem.label}

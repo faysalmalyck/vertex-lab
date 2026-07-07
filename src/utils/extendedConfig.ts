@@ -4,9 +4,9 @@ export const extendedConfig = {
         'screen-2xl': '83.75rem'
       },
       boxShadow: {
-        'service': '0px 3px 20px 0px #8E9CA90D',
-        'deatail_shadow': '0px 20px 80px 0px #68758D26',
-        "dark-md": "rgba(145, 158, 171, 0.2) 0px 0px 2px 0px, rgba(145, 158, 171, 0.12) 0px 12px 24px -4px",
+        'service': '0px 22px 70px 0px rgba(15,23,42,0.10)',
+        'deatail_shadow': '0px 24px 90px 0px rgba(15,23,42,0.18)',
+        "dark-md": "rgba(139, 92, 246, 0.22) 0px 0px 0px 1px, rgba(2, 6, 23, 0.45) 0px 24px 70px -24px",
       },
       transitionDuration: {
         '150': '150ms',
@@ -44,17 +44,19 @@ export const extendedConfig = {
         '999': '999'
       },
       colors: {
-        primary: "#2F73F2",
-        secondary: "#547593",
-        midnight_text: "#102D47",
-        grey: "#668199",
-        border: "#CCD7E1",
-        success: "#3cd278",
-        section: "#F8FAFC",
-        darkmode: "#081738",
-        darklight: "#000f30",
-        dark_border: "#224767",
-        SkyBlueMist: "#C0D5FB",
+        primary: "#8B5CF6",
+        secondary: "#64748B",
+        midnight_text: "#111827",
+        grey: "#64748B",
+        border: "rgba(15,23,42,0.12)",
+        success: "#F5C542",
+        accent: "#F5C542",
+        aqua: "#22D3EE",
+        section: "#F7F5FF",
+        darkmode: "#070A12",
+        darklight: "#101827",
+        dark_border: "rgba(255,255,255,0.12)",
+        SkyBlueMist: "#22D3EE",
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -1,14 +1,7 @@
 import React from "react";
-import { signIn } from "next-auth/react";
 
 
 const SocialSignIn = () => {
-  const handleGoogleSignIn = async () => {
-    await signIn("google");
-  };
-  const handleGithubSignIn = async () => {
-    await signIn("github");
-  };
   return (
     <>
       <div className="flex gap-4">

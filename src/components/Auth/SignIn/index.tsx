@@ -1,16 +1,12 @@
 "use client";
-import { signIn, useSession } from "next-auth/react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
 import { useContext, useEffect, useState } from "react";
 import SocialSignIn from "../SocialSignIn";
 import Logo from "@/components/Layout/Header/Logo";
-import Loader from "@/components/Common/Loader";
 import toast, { Toaster } from "react-hot-toast";
 import AuthDialogContext from "@/app/context/AuthDialogContext";
 
 const Signin = ({ signInOpen }: { signInOpen?: any }) => {
-  const { data: session } = useSession();
   const [username, setUsername] = useState("admin");
   const [password, setPassword] = useState("admin123");
   const [error, setError] = useState("");
@@ -19,16 +15,7 @@ const Signin = ({ signInOpen }: { signInOpen?: any }) => {
   const handleSubmit = async (e: any) => {
     const notify = () => toast("Here is your toast.");
     e.preventDefault();
-    const result = await signIn("credentials", {
-      redirect: false,
-      username,
-      password,
-    });
-    if (result?.error) {
-      // Handle successful sign-in
-      setError(result.error);
-    }
-    if (result?.status === 200) {
+    if (username && password) {
       setTimeout(() => {
         signInOpen(false);
       }, 1200);
@@ -37,6 +24,7 @@ const Signin = ({ signInOpen }: { signInOpen?: any }) => {
         authDialog?.setIsSuccessDialogOpen(false);
       }, 1100);
     } else {
+      setError("Please enter your username and password.");
       authDialog?.setIsFailedDialogOpen(true);
       setTimeout(() => {
         authDialog?.setIsFailedDialogOpen(false);

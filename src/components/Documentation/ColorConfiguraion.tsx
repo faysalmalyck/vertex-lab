@@ -14,17 +14,18 @@ export const ColorConfiguration = () => {
         </p>
         <div className='py-4 px-5 rounded-md bg-black mt-8'>
           <p className='text-sm text-gray-400 flex flex-col gap-2'>
-            <span>--color-primary: #2f73f2;</span>
-            <span>--color-secondary: #547593;</span>
-            <span>--color-midnight_text: #102d47;</span>
-            <span>--color-grey: #668199;</span>
-            <span>--color-border: #ccd7e1;</span>
-            <span>--color-success: #3cd278;</span>
-            <span>--color-section: #f8fafc;</span>
-            <span>--color-darkmode: #081738;</span>
-            <span>--color-darklight: #000f30;</span>
-            <span>--color-dark_border: #224767;</span>
-            <span>--color-Sky-blue-mist: #c0d5fb;</span>
+            <span>--color-primary: #8b5cf6;</span>
+            <span>--color-secondary: #64748b;</span>
+            <span>--color-midnight_text: #111827;</span>
+            <span>--color-grey: #64748b;</span>
+            <span>--color-border: rgba(15, 23, 42, 0.12);</span>
+            <span>--color-success: #f5c542;</span>
+            <span>--color-aqua: #22d3ee;</span>
+            <span>--color-section: #f7f5ff;</span>
+            <span>--color-darkmode: #070a12;</span>
+            <span>--color-darklight: #101827;</span>
+            <span>--color-dark_border: rgba(255, 255, 255, 0.12);</span>
+            <span>--color-Sky-blue-mist: #22d3ee;</span>
           </p>
         </div>
       </div>
@@ -38,8 +39,8 @@ export const ColorConfiguration = () => {
         </p>
         <div className='py-4 px-5 rounded-md bg-black mt-8'>
           <p className='text-sm text-gray-400 flex flex-col gap-2'>
-            <span>primary: "#2F73F2",</span>
-            <span>secondary: "#547593",</span>
+            <span>primary: "#8B5CF6",</span>
+            <span>secondary: "#64748B",</span>
           </p>
         </div>
       </div>

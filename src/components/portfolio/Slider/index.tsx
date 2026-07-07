@@ -4,7 +4,7 @@ import Slider from 'react-slick'
 import Image from 'next/image'
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
-import { portfolioinfo } from '@/app/api/data'
+import { portfolioinfo } from "@/data/siteData";
 
 const SlickSlider = () => {
   const settings = {

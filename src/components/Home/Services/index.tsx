@@ -1,30 +1,30 @@
 import React from 'react'
 import Link from 'next/link'
-import { Servicebox } from '@/app/api/data'
-import { Icon } from '@iconify/react'
+import { Servicebox } from "@/data/siteData";
 import Image from 'next/image'
+import { ArrowRight } from 'lucide-react'
 
 const Services = () => {
   return (
     <section
       id='services'
-      className='bg-section py-24 dark:bg-darklight'
+      className='relative overflow-hidden bg-section py-24 dark:bg-darklight'
     >
+      <div className='pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(139,92,246,0.16),transparent_32rem),radial-gradient(circle_at_80%_35%,rgba(34,211,238,0.08),transparent_24rem)]' />
       <div className='container mx-auto max-w-6xl px-4'>
         <div
-          className='flex items-center justify-center gap-2'
+          className='premium-badge mx-auto w-fit'
           data-aos='fade-up'
           data-aos-duration='1000'
         >
-          <span className='h-3 w-3 rounded-full bg-success'></span>
-
-          <span className='text-sm font-medium text-midnight_text dark:text-white/50'>
+          <span className='h-2 w-2 rounded-full bg-success'></span>
+          <span>
             Our Services
           </span>
         </div>
 
         <h2
-          className='mx-auto mt-6 mb-16 max-w-3xl text-center text-[30px] font-bold leading-tight text-midnight_text sm:text-4xl dark:text-white'
+          className='premium-heading mx-auto mt-6 mb-16 max-w-3xl text-center'
           data-aos='fade-up'
           data-aos-delay='200'
           data-aos-duration='1000'
@@ -41,11 +41,11 @@ const Services = () => {
               data-aos-duration='1000'
               className='group transform-gpu will-change-transform transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:-translate-y-3'
             >
-              <div className='relative flex h-full flex-col items-center overflow-hidden rounded-2xl border border-transparent bg-white px-8 py-12 text-center shadow-service transition-[box-shadow,border-color,background-color] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-primary/20 hover:shadow-[0_35px_80px_rgba(15,23,42,0.14)] dark:border-white/5 dark:bg-darkmode dark:hover:border-primary/40'>
-                <div className='absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-primary/10 opacity-0 transition-opacity duration-700 group-hover:opacity-100'></div>
+              <div className='glass-card relative flex h-full min-h-[420px] flex-col items-start overflow-hidden rounded-[1.75rem] px-8 py-10 text-left transition-[box-shadow,border-color,background-color] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-primary/25 hover:shadow-[0_35px_90px_rgba(47,115,242,0.16)]'>
+                <div className='absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-Sky-blue-mist/10 opacity-0 transition-opacity duration-700 group-hover:opacity-100'></div>
 
-                <div className='relative z-10 flex flex-1 flex-col items-center'>
-                  <div className='mb-8 flex h-20 w-20 items-center justify-center rounded-full bg-primary/10 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105'>
+                <div className='relative z-10 flex flex-1 flex-col items-start'>
+                  <div className='mb-8 flex h-20 w-20 items-center justify-center rounded-3xl bg-primary/10 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 group-hover:rotate-3 dark:bg-white/10'>
                     <Image
                       src={item.icon}
                       alt={item.title}
@@ -55,7 +55,7 @@ const Services = () => {
                     />
                   </div>
 
-                  <h3 className='mb-4 text-2xl font-bold text-midnight_text dark:text-white'>
+                  <h3 className='mb-4 text-2xl font-black text-midnight_text dark:text-white'>
                     {item.title}
                   </h3>
 
@@ -65,16 +65,11 @@ const Services = () => {
 
                   <Link
                     href='#'
-                    className='mt-auto inline-flex items-center gap-2 font-semibold text-primary'
+                    className='mt-auto inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-5 py-3 text-sm font-bold text-primary transition-all duration-300 hover:border-Sky-blue-mist/50 hover:bg-gradient-to-r hover:from-primary hover:to-Sky-blue-mist hover:text-white hover:shadow-[0_18px_45px_rgba(139,92,246,0.25)]'
                   >
                     Get Started
 
-                    <Icon
-                      icon='ei:chevron-right'
-                      width='22'
-                      height='22'
-                      className='transition-transform duration-500 ease-out group-hover:translate-x-5'
-                    />
+                    <ArrowRight className='h-4 w-4 transition-transform duration-500 ease-out group-hover:translate-x-1' />
                   </Link>
                 </div>
               </div>

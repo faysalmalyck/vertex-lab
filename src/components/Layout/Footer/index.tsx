@@ -5,12 +5,13 @@ import { getImgPath } from '@/utils/image'
 
 const Footer: FC = () => {
   return (
-    <footer className="bg-darkmode relative z-1 border-t border-dark_border/60 px-6 font-sans">
-      <div className="container mx-auto max-w-6xl px-4">
+    <footer className="relative z-1 overflow-hidden border-t border-white/10 bg-darkmode px-6 font-sans">
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(139,92,246,0.24),transparent_28rem),radial-gradient(circle_at_90%_80%,rgba(34,211,238,0.12),transparent_24rem)]" />
+      <div className="container relative mx-auto max-w-6xl px-4">
         <div className="grid grid-cols-1 md:grid-cols-12 lg:gap-8">
           
           {/* Brand & CTA Column */}
-          <div className="md:col-span-5 col-span-12 py-12 flex flex-col justify-between border-b md:border-b-0 md:border-r border-solid border-dark_border/60 pr-0 md:pr-8">
+          <div className="md:col-span-5 col-span-12 py-12 flex flex-col justify-between border-b md:border-b-0 md:border-r border-solid border-white/10 pr-0 md:pr-8">
             <div className="text-center md:text-start">
               <Link href="/" className="inline-block transition-transform duration-300 hover:scale-[1.02]">
                 <Image
@@ -23,19 +24,19 @@ const Footer: FC = () => {
                   unoptimized
                 />
               </Link>
-              <h2 className="text-white mt-8 mb-8 text-3xl sm:text-4xl leading-tight font-semibold tracking-tight max-w-sm mx-auto md:mx-0">
+              <h2 className="text-white mt-8 mb-8 text-3xl sm:text-4xl leading-tight font-black tracking-tight max-w-sm mx-auto md:mx-0">
                 Ready to get started?
               </h2>
               <Link
                 href="#"
-                className="inline-block px-8 py-3.5 rounded-full bg-primary text-white text-sm font-medium tracking-wide transition-all duration-300 hover:bg-blue-600 hover:shadow-[0_4px_20px_rgba(59,130,246,0.3)] hover:-translate-y-0.5">
+                className="premium-gradient-button inline-block px-8 py-3.5 rounded-full text-sm font-bold tracking-wide hover:-translate-y-1">
                 Get Started
               </Link>
             </div>
           </div>
 
           {/* Support & Contact Column */}
-          <div className="md:col-span-3 sm:col-span-6 col-span-12 py-12 flex flex-col items-center md:items-start justify-center md:border-r border-b sm:border-b-0 border-solid border-dark_border/60 md:px-8">
+          <div className="md:col-span-3 sm:col-span-6 col-span-12 py-12 flex flex-col items-center md:items-start justify-center md:border-r border-b sm:border-b-0 border-solid border-white/10 md:px-8">
             <div className="w-full max-w-xs">
               <span className="text-xs font-bold tracking-widest text-white/40 uppercase block mb-6">
                 Support
@@ -95,7 +96,7 @@ const Footer: FC = () => {
               <p className="text-white/50 text-sm pb-6 leading-relaxed">
                 To be updated with all the latest trends and product releases.
               </p>
-              <form className="w-full flex bg-white/5 border border-white/10 rounded-full p-1 focus-within:border-primary/60 focus-within:ring-2 focus-within:ring-primary/20 transition-all duration-300">
+              <form className="w-full flex bg-white/8 border border-white/10 rounded-full p-1.5 focus-within:border-primary/60 focus-within:ring-2 focus-within:ring-primary/20 transition-all duration-300">
                 <input
                   type="email"
                   placeholder="Email address*"
@@ -104,7 +105,7 @@ const Footer: FC = () => {
                 />
                 <button
                   type="submit"
-                  className="px-6 py-2.5 text-sm font-medium bg-white text-darkmode rounded-full transition-all duration-200 hover:bg-primary hover:text-white shrink-0">
+                  className="px-6 py-2.5 text-sm font-bold bg-gradient-to-r from-primary to-Sky-blue-mist text-white rounded-full transition-all duration-200 hover:shadow-[0_14px_36px_rgba(34,211,238,0.24)] shrink-0">
                   Subscribe
                 </button>
               </form>
@@ -115,7 +116,7 @@ const Footer: FC = () => {
       </div>
 
       {/* Footer Bottom Bar */}
-      <div className="border-t border-solid border-dark_border/60 py-8">
+      <div className="relative border-t border-solid border-white/10 py-8">
         <div className="container mx-auto max-w-6xl px-4 flex flex-col md:flex-row justify-between items-center gap-6">
           <nav>
             <ul className="flex flex-wrap justify-center items-center gap-6 sm:gap-8">
