@@ -4,10 +4,11 @@ import { Blog } from "@/types/blog";
 import { format } from "date-fns";
 import Link from "next/link";
 import { ArrowUpRight, CalendarDays } from "lucide-react";
+import { getImgPath } from "@/utils/image";
 
 const BlogCard = ({ blog }: { blog: Blog }) => {
     const { title, coverImage, excerpt, date, slug } = blog;
-    const postTitle = title ?? "Venus insight";
+    const postTitle = title ?? "Vertex insight";
     const postSlug = slug ?? "#!";
     const postImage = coverImage ?? "";
     const postDate = date ? new Date(date) : new Date();
@@ -16,7 +17,7 @@ const BlogCard = ({ blog }: { blog: Blog }) => {
                 <div className="relative aspect-[4/3] overflow-hidden rounded-[1.25rem] bg-slate-900">
                     <Link href={`/blog/${postSlug}`} aria-label="blog cover" className="block h-full">
                         <Image
-                            src={`/venus-nextjs/${postImage}`}
+                            src={getImgPath(`/${postImage}`)}
                             alt={postTitle}
                             className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-110"
                             width={408}

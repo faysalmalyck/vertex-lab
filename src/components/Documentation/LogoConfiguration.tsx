@@ -15,23 +15,16 @@ export const LogoConfiguration = () => {
           <div className='text-sm text-gray-400'>
             <p>&#x3C;Link href=&#x22;/&#x22;&#x3E;</p>
             <p className='ms-2'>&#x3C;Image</p>
-            <p className='ms-3'>src=&#x22;/images/logo/logo.svg&#x22;</p>
-            <p className='ms-3'>alt=&#x22;logo&#x22;</p>
-            <p className='ms-3'>width={160}</p>
-            <p className='ms-3'>height={50}</p>
+            <p className='ms-3'>src=&#x22;/images/brand/vertex-mark.png&#x22;</p>
+            <p className='ms-3'>alt=&#x22;Vertex logo icon&#x22;</p>
+            <p className='ms-3'>width={44}</p>
+            <p className='ms-3'>height={44}</p>
             <p className='ms-3'>quality={100}</p>
-            <p className='ms-3'>className=&#x27;dark:hidden&#x27;</p>
             <p>/&#x3E;</p>
-            <p className='ms-2'>&#x3C;Image</p>
-            <p className='ms-5'>
-              src=&#x22;/images/footer/footer-logo-white.svg&#x22;
+            <p className='ms-2'>&#x3C;span&#x3E;Vertex&#x3C;/span&#x3E;</p>
+            <p className='ms-2'>
+              &#x3C;span&#x3E;Digital Solutions Agency&#x3C;/span&#x3E;
             </p>
-            <p className='ms-5'>alt=&#x22;logo&#x22;</p>
-            <p className='ms-5'>width={160}</p>
-            <p className='ms-5'>height={50}</p>
-            <p className='ms-5'>quality={100}</p>
-            <p className='ms-5'>className=&#x27;dark:block hidden&#x27;</p>
-            <p className='ms-2'>/&#x3E;</p>
             <p className='ms-2'>&#x3C;/Link&#x3E;</p>
           </div>
         </div>

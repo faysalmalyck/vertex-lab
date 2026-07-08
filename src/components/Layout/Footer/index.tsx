@@ -4,6 +4,15 @@ import Image from 'next/image'
 import { getImgPath } from '@/utils/image'
 
 const Footer: FC = () => {
+  const footerLinks = [
+    { label: 'About', href: '/about' },
+    { label: 'Services', href: '/services' },
+    { label: 'Portfolio', href: '/portfolio' },
+    { label: 'Team', href: '/team' },
+    { label: 'Careers', href: '/careers' },
+    { label: 'Contact', href: '/contact' },
+  ]
+
   return (
     <footer className="relative z-1 overflow-hidden border-t border-white/10 bg-darkmode px-6 font-sans">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_0%,rgba(139,92,246,0.24),transparent_28rem),radial-gradient(circle_at_90%_80%,rgba(34,211,238,0.12),transparent_24rem)]" />
@@ -14,21 +23,30 @@ const Footer: FC = () => {
           <div className="md:col-span-5 col-span-12 py-12 flex flex-col justify-between border-b md:border-b-0 md:border-r border-solid border-white/10 pr-0 md:pr-8">
             <div className="text-center md:text-start">
               <Link href="/" className="inline-block transition-transform duration-300 hover:scale-[1.02]">
-                <Image
-                  src={getImgPath('/images/logo/logo-white.svg')}
-                  alt="logo"
-                  width={160}
-                  height={50}
-                  style={{ width: 'auto', height: 'auto' }}
-                  quality={100}
-                  unoptimized
-                />
+                <span className="flex items-center justify-center gap-3 md:justify-start">
+                  <span className="flex h-12 w-12 shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] shadow-[0_12px_35px_rgba(139,92,246,0.24)]">
+                    <Image
+                      src={getImgPath('/images/brand/vertex-mark.png')}
+                      alt="Vertex logo icon"
+                      width={48}
+                      height={48}
+                      className="h-full w-full object-cover"
+                      quality={100}
+                    />
+                  </span>
+                  <span className="leading-none">
+                    <span className="block text-2xl font-black text-white">Vertex</span>
+                    <span className="mt-1 block text-[10px] font-bold uppercase tracking-[0.18em] text-white/45">
+                      Digital Solutions Agency
+                    </span>
+                  </span>
+                </span>
               </Link>
               <h2 className="text-white mt-8 mb-8 text-3xl sm:text-4xl leading-tight font-black tracking-tight max-w-sm mx-auto md:mx-0">
                 Ready to get started?
               </h2>
               <Link
-                href="#"
+                href="/contact"
                 className="premium-gradient-button inline-block px-8 py-3.5 rounded-full text-sm font-bold tracking-wide hover:-translate-y-1">
                 Get Started
               </Link>
@@ -120,13 +138,13 @@ const Footer: FC = () => {
   <div className="container mx-auto flex max-w-6xl flex-col items-center px-4 py-10">
     <nav aria-label="Footer Navigation">
       <ul className="mb-6 flex flex-wrap items-center justify-center gap-x-8 gap-y-3">
-        {['About', 'Services', 'Portfolio', 'Blog', 'Contact'].map((item) => (
-          <li key={item}>
+        {footerLinks.map((item) => (
+          <li key={item.label}>
             <Link
-              href={`/#${item.toLowerCase()}`}
+              href={item.href}
               className="relative text-sm font-medium text-white/50 transition-all duration-300 hover:text-white after:absolute after:-bottom-1 after:left-0 after:h-px after:w-0 after:bg-primary after:transition-all after:duration-300 hover:after:w-full"
             >
-              {item}
+              {item.label}
             </Link>
           </li>
         ))}

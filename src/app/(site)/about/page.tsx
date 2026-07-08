@@ -5,7 +5,8 @@ import { Metadata } from "next";
 import Counter from "@/components/Home/Counter";
 import Progresswork from "@/components/Home/WorkProgress";
 export const metadata: Metadata = {
-    title: "About | Venus",
+    title: "About",
+    description: "Learn about Vertex, a premium digital solutions agency for modern software and product delivery.",
 };
 
 const page = () => {

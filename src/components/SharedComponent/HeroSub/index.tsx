@@ -15,7 +15,7 @@ const HeroSub: FC<HeroSubProps> = ({ title, description, breadcrumbLinks }) => {
         <div className='pointer-events-none absolute inset-x-0 bottom-0 h-px bg-gradient-to-r from-transparent via-primary/25 to-transparent' />
         <div className='premium-badge mx-auto mb-6 w-fit'>
           <span className='h-2 w-2 rounded-full bg-success' />
-          Venus studio
+          Vertex studio
         </div>
         <h2 className='premium-heading mx-auto max-w-3xl'>
           {title}

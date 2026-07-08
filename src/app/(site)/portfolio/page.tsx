@@ -3,7 +3,8 @@ import Portfolio from "@/components/portfolio/PortfolioList";
 import HeroSub from "@/components/SharedComponent/HeroSub";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-    title: "Portfolio | Venus",
+    title: "Portfolio",
+    description: "Explore Vertex portfolio work across premium websites, SaaS products, and digital platforms.",
 };
 
 const PortfolioList = () => {

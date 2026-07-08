@@ -1,11 +1,11 @@
-# Venus Next.js Website
+# Vertex Digital Solutions Agency Website
 
 ## Getting Started
 
 1. Clone Repository
 
 ```
-git clone https://github.com/themewagon/venus-nextjs.git
+git clone https://github.com/your-org/vertex.git
 ```
 
 2. Install Dependencies

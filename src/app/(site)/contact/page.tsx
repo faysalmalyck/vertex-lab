@@ -6,9 +6,9 @@ import ContactInfo from "@/components/Contact/ContactInfo";
 import Location from "@/components/Contact/OfficeLocation";
 
 export const metadata: Metadata = {
-  title: "Contact | Venus",
+  title: "Contact",
   description:
-    "Get in touch with the Venus team for inquiries, support, or project discussions.",
+    "Get in touch with Vertex for project discussions, digital strategy, software builds, and product consulting.",
 };
 
 export default function Page() {

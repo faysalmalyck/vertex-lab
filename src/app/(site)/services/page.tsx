@@ -6,7 +6,8 @@ import Counter from "@/components/Home/Counter";
 import Progresswork from "@/components/Home/WorkProgress";
 import Services from "@/components/Home/Services";
 export const metadata: Metadata = {
-    title: "Services | Venus",
+    title: "Services",
+    description: "Explore Vertex digital solution services across web, SaaS, AI, cloud, and product engineering.",
 };
 
 const page = () => {

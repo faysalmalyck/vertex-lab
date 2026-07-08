@@ -1,12 +1,20 @@
 import React from "react";
 import Image from "next/image";
 import { getImgPath } from "@/utils/image";
-import { ArrowRight, Mail, MapPin, Phone } from "lucide-react";
-
-const inputClass =
-  "w-full rounded-2xl border border-border bg-white/70 px-4 py-3 text-base text-midnight_text transition-all duration-300 placeholder:text-grey focus:border-primary focus:ring-4 focus:ring-primary/10 focus-visible:outline-0 dark:border-white/10 dark:bg-white/5 dark:text-white dark:focus:border-primary";
+import { CheckCircle2, Mail, MapPin, MessageCircle, Phone, Send } from "lucide-react";
 
 const Contactform = () => {
+  const email = "faysal.malick@icloud.com";
+  const whatsappMessage = encodeURIComponent(
+    "Hi, I want to discuss a project with you."
+  );
+  const whatsappLink = `https://wa.me/923055552772?text=${whatsappMessage}`;
+  const checklist = [
+    "Free project discussion",
+    "Fast response",
+    "Clear proposal",
+  ];
+
   return (
     <section className="relative overflow-hidden bg-darkmode dark:bg-darklight">
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_25%_20%,rgba(139,92,246,0.22),transparent_34rem),radial-gradient(circle_at_85%_80%,rgba(34,211,238,0.12),transparent_28rem)]" />
@@ -80,55 +88,54 @@ const Contactform = () => {
             data-aos-duration="1000"
             className="relative row-start-2 col-start-1 row-end-2 col-end-13 md:row-start-1 md:col-start-8"
           >
-            <div className="glass-card relative z-10 m-auto mt-8 max-w-[50rem] rounded-[2rem] px-6 py-8 sm:px-9 lg:mt-0">
+            <div className="glass-card relative z-10 m-auto mt-8 max-w-[50rem] overflow-hidden rounded-[2rem] px-6 py-8 sm:px-9 lg:mt-0">
+              <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(139,92,246,0.20),transparent_34%),radial-gradient(circle_at_bottom_right,rgba(34,211,238,0.14),transparent_32%)]" />
+              <div className="relative">
+              <div className="mb-7 flex h-14 w-14 items-center justify-center rounded-2xl border border-white/10 bg-white/10 text-Sky-blue-mist shadow-[0_18px_45px_rgba(34,211,238,0.12)]">
+                <MessageCircle className="h-7 w-7" />
+              </div>
               <h2 className="mb-3 text-3xl font-black text-midnight_text dark:text-white">
                 Start the project
               </h2>
-              <p className="mb-7 text-sm leading-6 text-secondary dark:text-white/55">
-                Tell us what you are building. We will shape the fastest path to a polished launch.
+              <p className="mb-8 text-base leading-7 text-secondary dark:text-white/65">
+                Have a project in mind? Send us your idea directly and we&apos;ll get back to you.
               </p>
-              <form className="flex w-full flex-wrap justify-between gap-4">
-                <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2">
-                  <input className={inputClass} type="text" placeholder="First name" />
-                  <input className={inputClass} type="text" placeholder="Last name" />
-                </div>
-                <input type="email" className={inputClass} placeholder="yourname@email.com" />
-                <select className={inputClass}>
-                  <option value="">Choose a service</option>
-                  <option value="Website Development">Website Development</option>
-                  <option value="Mobile Application (IOS & Android)">Mobile Application(IOS & Android)</option>
-                  <option value="Saas Application">Saas Application</option>
-                  <option value="(POS) System">(POS) System</option>
-                  <option value="EdTech">EdTech</option>
-                  <option value="Shopify Development">Shopify Development</option>
-                  <option value="Search engine optimization">Search engine optimization</option>
-                  <option value="Cloud Deployment & DevOps">Cloud Deployment& DevOps</option>
-                  <option value="UI/UX Design">UI/UX Design</option>
-                  <option value="Database optimization">Database optimization</option>
-                  <option value="Other">Other</option>
-                </select>
-                <textarea
-                  className={`${inputClass} h-[9.375rem] resize-none`}
-                  placeholder="Let us know about your project"
-                />
-                <label className="flex items-start gap-3 text-sm leading-6 text-grey dark:text-white/55">
-                  <input
-                    name="wp-comment-cookies-consent"
-                    type="checkbox"
-                    value="yes"
-                    className="mt-1 h-5 w-5 cursor-pointer rounded border-2 border-primary accent-primary"
-                  />
-                  <span>
-                    I have read and acknowledge the <span className="cursor-pointer text-primary">Terms and Conditions</span>
-                  </span>
-                </label>
-                <button
-                  className="premium-gradient-button flex w-full items-center justify-center gap-2 rounded-2xl py-4 font-bold hover:-translate-y-1"
-                  type="submit"
+              <div className="grid gap-3">
+                <a
+                  href={whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="premium-gradient-button flex w-full items-center justify-center gap-2 rounded-2xl px-5 py-4 font-bold hover:-translate-y-1"
                 >
-                  Submit Inquiry <ArrowRight className="h-4 w-4" />
-                </button>
-              </form>
+                  Chat on WhatsApp
+                  <MessageCircle className="h-5 w-5" />
+                </a>
+                <a
+                  href={`mailto:${email}`}
+                  className="flex w-full items-center justify-center gap-2 rounded-2xl border border-white/10 bg-white/10 px-5 py-4 font-bold text-midnight_text backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-Sky-blue-mist/40 hover:bg-white/15 hover:text-primary dark:text-white dark:hover:text-Sky-blue-mist"
+                >
+                  Send Email
+                  <Send className="h-5 w-5" />
+                </a>
+              </div>
+
+              <div className="mt-8 grid gap-3">
+                {checklist.map((item) => (
+                  <div
+                    key={item}
+                    className="flex items-center gap-3 rounded-2xl border border-white/10 bg-white/[0.06] px-4 py-3 text-sm font-semibold text-secondary transition-all duration-300 hover:border-primary/30 hover:bg-white/10 dark:text-white/75"
+                  >
+                    <CheckCircle2 className="h-5 w-5 text-success" />
+                    {item}
+                  </div>
+                ))}
+              </div>
+
+              <p className="mt-7 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-secondary dark:text-white/55">
+                <span className="h-2 w-2 rounded-full bg-success" />
+                Usually replies within 24 hours
+              </p>
+              </div>
             </div>
           </div>
         </div>
