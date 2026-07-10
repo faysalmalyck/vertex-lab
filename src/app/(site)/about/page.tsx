@@ -1,9 +1,9 @@
 import React from "react";
 import HeroSub from "@/components/SharedComponent/HeroSub";
 import { Metadata } from "next";
-import Counter from "@/components/Home/Counter";
-import Progresswork from "@/components/Home/WorkProgress";
-import { coreValues } from "@/app/(site)/CoreValues/CoreValue"; // Adjust this path to match your folder tree
+import { coreValues } from "@/app/(site)/about/Our Core Values/CoreValue"; 
+import Counter from "./Our work Count";
+import TeamPage from "./Our Team/page";
 
 export const metadata: Metadata = {
     title: "About",
@@ -77,9 +77,8 @@ const page = () => {
 
         </div>
       </section>
-      
-      <Counter isColorMode={true} />
-      <Progresswork isColorMode={true} />
+      <Counter isColorMode/>
+      <TeamPage />
     </>
   );
 };

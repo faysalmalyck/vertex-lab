@@ -2,9 +2,9 @@
 import React from "react";
 import HeroSub from "@/components/SharedComponent/HeroSub";
 import { Metadata } from "next";
-import Counter from "@/components/Home/Counter";
-import Progresswork from "@/components/Home/WorkProgress";
-import Services from "@/components/Home/Services";
+import Services from "./services";
+import ProgressWork from "./progress";
+
 export const metadata: Metadata = {
     title: "Services",
     description: "Explore Vertex digital solution services across web, SaaS, AI, cloud, and product engineering.",
@@ -18,11 +18,13 @@ const page = () => {
   return (
     <>
       <HeroSub
-        title="Services"
+        title="Our Services"
         description="Discover a wealth of insightful materials meticulously crafted to provide you with a comprehensive understanding of the latest trends."
         breadcrumbLinks={breadcrumbLinks}
       />
-      <Services/>
+      <Services />
+      <ProgressWork isColorMode />
+
     </>
   );
 };

@@ -15,8 +15,8 @@ const PortfolioList = () => {
     return (
         <>
             <HeroSub
-                title="Portfolio"
-                description="Dive into a curated collection of my finest work, showcasing expertise across various industries."
+                title="Our Clients"
+                description="Every client engagement is built on trust, collaboration. Our success is defined by the success of our clients. We build lasting partnerships by delivering technology solutions that create measurable impact and sustainable growth."
                 breadcrumbLinks={breadcrumbLinks}
             />
             <Portfolio />
