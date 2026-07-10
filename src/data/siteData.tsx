@@ -16,36 +16,21 @@ export const count = [
     value: "30M+",
     description: "Revenue generated through new projects & marketing",
   },
+  {
+    icon: getImgPath("/images/counter/arrow.svg"),
+    value: "98 %",
+    description: "Client Retention Through Commitment to Quality",
+  },
 ];
 
 export const Progress = [
-  { title: "Custom business Websites", Progress: 99 },
-  { title: "Saas Application development", Progress: 85 },
-  { title: "EdTech", Progress: 80 },
-  { title: "AI Integrations (OpenAI,Langchain,MCP)", Progress: 90 },
-  { title: "Cloud Deployment & DevOps", Progress: 92 },
+  { title: "Customer Success", Progress: 99 },
+  { title: "Business Growth", Progress: 95 },
+  { title: "Innovation", Progress: 85 },
+  { title: "Performance", Progress: 90 },
+  { title: "Security", Progress: 92 },
 ];
 
-export const Servicebox = [
-  {
-    icon: getImgPath("/images/services/ux-design-product_1.svg"),
-    title: "Development",
-    description:
-      "From concept to deployment we build scalable SaaS platforms, custom web applications, mobile apps, secure APIs, and AI powered solutions that help businesses automate workflows, improve user experiences, and accelerate growth.",
-  },
-  {
-    icon: getImgPath("/images/services/perfomance-optimization.svg"),
-    title: "Performance optimization",
-    description:
-      "Enhance loading speed, SEO, Core Web Vitals, database performance, caching, and application security. Our optimization strategies focus on improving speed, scalability, and overall efficiency.",
-  },
-  {
-    icon: getImgPath("/images/services/ux-design-product_2.svg"),
-    title: "Cloud & DevOps",
-    description:
-      "Deploy and manage applications on AWS, Azure, and Google Cloud. We provide CI/CD pipelines, infrastructure automation, containerization (Docker, Kubernetes), monitoring, and DevOps consulting to ensure your applications are reliable, scalable, and secure.",
-  },
-];
 
 export const portfolioinfo = [
   {

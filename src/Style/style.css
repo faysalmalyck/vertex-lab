@@ -15,3 +15,24 @@
 .animate-marquee:hover {
   animation-play-state: paused;
 }
+
+@layer utilities {
+  .perspective-\[1000px\] {
+    perspective: 1000px;
+  }
+  .transform-style-3d {
+    transform-style: preserve-3d;
+  }
+  .translate-z-24 {
+    transform: translateZ(96px);
+  }
+  .-translate-z-24 {
+    transform: translateZ(-96px);
+  }
+  .rotate-y-90 {
+    transform: rotateY(90deg);
+  }
+  .-rotate-y-90 {
+    transform: rotateY(-90deg);
+  }
+}

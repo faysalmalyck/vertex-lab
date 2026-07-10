@@ -17,7 +17,7 @@ const page = () => {
   return (
     <>
       <HeroSub
-        title="About Us"
+        title="About us"
         description="Discover a wealth of insightful materials meticulously crafted to provide you with a comprehensive understanding of the latest trends."
         breadcrumbLinks={breadcrumbLinks}
       />

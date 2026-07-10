@@ -22,28 +22,22 @@ const Footer: FC = () => {
           {/* Brand & CTA Column */}
           <div className="md:col-span-5 col-span-12 py-12 flex flex-col justify-between border-b md:border-b-0 md:border-r border-solid border-white/10 pr-0 md:pr-8">
             <div className="text-center md:text-start">
-              <Link href="/" className="inline-block transition-transform duration-300 hover:scale-[1.02]">
-                <span className="flex items-center justify-center gap-3 md:justify-start">
-                  <span className="flex h-12 w-12 shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.06] shadow-[0_12px_35px_rgba(139,92,246,0.24)]">
-                    <Image
-                      src={getImgPath('/images/brand/vertex-mark.png')}
-                      alt="Vertex logo icon"
-                      width={48}
-                      height={48}
-                      className="h-full w-full object-cover"
-                      quality={100}
-                    />
-                  </span>
-                  <span className="leading-none">
-                    <span className="block text-2xl font-black text-white">Vertex</span>
-                    <span className="mt-1 block text-[10px] font-bold uppercase tracking-[0.18em] text-white/45">
-                      Digital Solutions Agency
-                    </span>
-                  </span>
-                </span>
-              </Link>
+             <Link
+  href="/"
+  className="flex items-center transition-transform duration-300 hover:-translate-y-0.5"
+>
+  <Image
+    src={getImgPath("/images/logo/logo-white.svg")}
+    alt="Vertex logo"
+    width={120}
+    height={28}
+    quality={100}
+    priority
+    className="h-8 w-auto transition-all duration-300 ease-in-out hover:scale-105 hover:brightness-110 sm:h-9"
+  />
+</Link>
               <h2 className="text-white mt-8 mb-8 text-3xl sm:text-4xl leading-tight font-black tracking-tight max-w-sm mx-auto md:mx-0">
-                Ready to get started?
+                Ready to Launch Your Next Digital Product?
               </h2>
               <Link
                 href="/contact"
