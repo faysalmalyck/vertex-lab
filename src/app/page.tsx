@@ -2,8 +2,9 @@ import React from 'react'
 import { Metadata } from "next";
 import Hero from '@/components/Home/Hero';
 import Counter from '@/app/(site)/about/Our work Count'
-import VertexEdgePage from '@/components/Home/vertex edge/vertexedge';
+import ProgressWork from '@/components/Home/progress';
 import Contactform from '@/components/Home/Contact';
+import SoftwareSolutions from '@/components/Home/SoftwareSolutions/softwareSolution';
 export const metadata: Metadata = {
   title: {
     absolute: "Vertex | Digital Solutions Agency",
@@ -17,7 +18,8 @@ export default function Home() {
     <main>
       <Hero />
       <Counter isColorMode={false} />
-      
+      <ProgressWork isColorMode />
+      <SoftwareSolutions />
       <Contactform />
     </main>
   )

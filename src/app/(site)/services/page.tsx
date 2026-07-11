@@ -1,10 +1,9 @@
-
 import React from "react";
 import HeroSub from "@/components/SharedComponent/HeroSub";
+import FeaturesSection from "@/components/Feature";
 import { Metadata } from "next";
 import Services from "./services";
-import ProgressWork from "./progress";
-
+import ContactForm from "@/components/Contact/Form";
 export const metadata: Metadata = {
     title: "Services",
     description: "Explore Vertex digital solution services across web, SaaS, AI, cloud, and product engineering.",
@@ -21,10 +20,14 @@ const page = () => {
         title="Our Services"
         description="Discover a wealth of insightful materials meticulously crafted to provide you with a comprehensive understanding of the latest trends."
         breadcrumbLinks={breadcrumbLinks}
-      />
+      />      
       <Services />
-      <ProgressWork isColorMode />
-
+      
+      <div className="py-12 ">
+        <FeaturesSection />
+        <ContactForm />
+      
+      </div>
     </>
   );
 };

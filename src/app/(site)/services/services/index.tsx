@@ -1,39 +1,46 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
-import { ArrowRight } from 'lucide-react'
+import { 
+  ArrowRight, 
+  Monitor, 
+  Layers, 
+  Smartphone, 
+  Cpu, 
+  Zap, 
+  Wrench 
+} from 'lucide-react'
 
 const Services = () => {
   const servicesList = [
     {
       title: "Web Development",
       description: "We design and build robust, custom web and mobile applications tailored to your specific business requirements.",
-      icon: "/images/services/web.svg"
+      icon: Monitor
     },
     {
       title: "SaaS Development",
       description: "Build scalable, multi-tenant software-as-a-service platforms with secure architectures and seamless subscription management.",
-      icon: "/images/services/saas.svg"
+      icon: Layers
     },
     {
       title: "Mobile Application Development",
       description: "Develop high performance native and cross platform mobile applications tailored to your business goals and user expectations.",
-      icon: "/images/services/mobile.svg"
+      icon: Smartphone
     },
     {
       title: "AI and Machine learning Solutions",
       description: "Integrate intelligent workflows, machine learning models, and automated processing pipelines to optimize operations.",
-      icon: "/images/services/ai.svg"
+      icon: Cpu
     },
     {
       title: "Performance Optimization",
       description: "Audit and accelerate existing applications, reduce asset size, and minimize infrastructure hosting costs.",
-      icon: "/images/services/performance.svg"
+      icon: Zap
     },
     {
       title: "Maintenance & Support",
       description: "Ensure continuous security updates, dependency upgrades, active monitoring, and immediate issue resolution.",
-      icon: "/images/services/maintenance.svg"
+      icon: Wrench
     }
   ]
 
@@ -73,47 +80,47 @@ const Services = () => {
         </p>
 
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {servicesList.map((item, index) => (
-            <div
-              key={index}
-              data-aos="fade-up"
-              data-aos-delay={index * 150}
-              data-aos-duration="1000"
-              className="group transform-gpu will-change-transform transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
-            >
-              <div className="glass-card relative flex h-full min-h-[420px] flex-col items-start overflow-hidden rounded-[1.75rem] px-8 py-10 text-left transition-[box-shadow,border-color,background-color] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-primary/25 hover:shadow-[0_35px_90px_rgba(47,115,242,0.16)]">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-Sky-blue-mist/10 opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
+          {servicesList.map((item, index) => {
+            // Dynamic Capitalized Binding for React Component rendering
+            const IconComponent = item.icon;
 
-                <div className="relative z-10 flex flex-1 flex-col items-start w-full">
-                  <div className="mb-8 flex h-20 w-20 mx-auto items-center justify-center rounded-3xl bg-primary/10 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 dark:bg-white/10">
-                    <Image
-                      src={item.icon}
-                      alt={item.title}
-                      width={40}
-                      height={40}
-                      className="h-10 w-10 object-contain"
-                    />
+            return (
+              <div
+                key={index}
+                data-aos="fade-up"
+                data-aos-delay={index * 150}
+                data-aos-duration="1000"
+                className="group transform-gpu will-change-transform transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+              >
+                <div className="glass-card relative flex h-full min-h-[420px] flex-col items-start overflow-hidden rounded-[1.75rem] px-8 py-10 text-left transition-[box-shadow,border-color,background-color] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] hover:border-primary/25 hover:shadow-[0_35px_90px_rgba(47,115,242,0.16)]">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-Sky-blue-mist/10 opacity-0 transition-opacity duration-700 group-hover:opacity-100"></div>
+
+                  <div className="relative z-10 flex flex-1 flex-col items-start w-full">
+                    {/* Centered structural Container matching original layout dimensions */}
+                    <div className="mb-8 flex h-20 w-20 mx-auto items-center justify-center rounded-3xl bg-primary/10 transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-105 dark:bg-white/10">
+                      <IconComponent className="h-10 w-10 text-primary dark:text-white stroke-[1.75]" />
+                    </div>
+
+                    <h3 className="mb-4 text-2xl font-black text-midnight_text dark:text-white">
+                      {item.title}
+                    </h3>
+
+                    <p className="mb-8 text-base leading-7 text-gray-600 dark:text-white/60">
+                      {item.description}
+                    </p>
+
+                    <Link
+                      href="#"
+                      className="mt-auto inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-5 py-3 text-sm font-bold text-primary transition-all duration-300 hover:border-Sky-blue-mist/50 hover:bg-gradient-to-r hover:from-primary hover:to-Sky-blue-mist hover:text-white hover:shadow-[0_18px_45px_rgba(139,92,246,0.25)]"
+                    >
+                      Get Started
+                      <ArrowRight className="h-4 w-4 transition-transform duration-500 ease-out group-hover:translate-x-1" />
+                    </Link>
                   </div>
-
-                  <h3 className="mb-4 text-2xl font-black text-midnight_text dark:text-white">
-                    {item.title}
-                  </h3>
-
-                  <p className="mb-8 text-base leading-7 text-gray-600 dark:text-white/60">
-                    {item.description}
-                  </p>
-
-                  <Link
-                    href="#"
-                    className="mt-auto inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary/10 px-5 py-3 text-sm font-bold text-primary transition-all duration-300 hover:border-Sky-blue-mist/50 hover:bg-gradient-to-r hover:from-primary hover:to-Sky-blue-mist hover:text-white hover:shadow-[0_18px_45px_rgba(139,92,246,0.25)]"
-                  >
-                    Get Started
-                    <ArrowRight className="h-4 w-4 transition-transform duration-500 ease-out group-hover:translate-x-1" />
-                  </Link>
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

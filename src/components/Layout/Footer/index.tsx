@@ -37,7 +37,9 @@ const Footer: FC = () => {
   />
 </Link>
               <h2 className="text-white mt-8 mb-8 text-3xl sm:text-4xl leading-tight font-black tracking-tight max-w-sm mx-auto md:mx-0">
-                Ready to Launch Your Next Digital Product?
+                Ready to Launch Your Next <span className="bg-gradient-to-r from-violet-400 via-cyan-400 to-emerald-400 bg-clip-text font-black text-transparent">
+                 Digital Product
+              </span>
               </h2>
               <Link
                 href="/contact"
@@ -48,32 +50,50 @@ const Footer: FC = () => {
           </div>
 
           {/* Support & Contact Column */}
-          <div className="md:col-span-3 sm:col-span-6 col-span-12 py-12 flex flex-col items-center md:items-start justify-center md:border-r border-b sm:border-b-0 border-solid border-white/10 md:px-8">
+          <div className="md:col-span-3 sm:col-span-6 col-span-12 py-20  flex flex-col items-center md:items-start justify-center md:border-r border-b sm:border-b-0 border-solid border-white/10 md:px-8">
             <div className="w-full max-w-xs">
               <span className="text-xs font-bold tracking-widest text-white/40 uppercase block mb-6">
                 Support
               </span>
               
-              <div className="mb-6 group">
-                <p className="text-xs text-white/50 mb-1 font-medium">Phone</p>
-                <Link
-                  href="tel:+(923) 0555 2772"
-                  className="text-base text-white/80 transition-colors duration-200 group-hover:text-primary font-medium tracking-wide">
-                  +92-305-5552772
-                </Link>
-              </div>
-              
-              <div className="mb-8 group">
-                <p className="text-xs text-white/50 mb-1 font-medium">Email</p>
-                <Link
-                  href="mailto:faysal.malick@icloud.com"
-                  className="text-base text-white/80 transition-colors duration-200 group-hover:text-primary font-medium tracking-wide break-all">
-                  faysal.malick@icloud.com
-                </Link>
-              </div>
-
+              <div className="space-y-6">
+  {/* Phone Item */}
+  <div className="space-y-6 py-4  gap-6">
+  {/* Phone Item */}
+  <div className="group relative transition-all duration-300 ease-out hover:translate-x-2">
+    {/* Left accent border stays static in the margin while text moves */}
+    <span className="absolute -left-4 top-0 h-full w-[2px] bg-white/10 transition-all duration-300 ease-out group-hover:bg-primary" />
+    
+    <p className="text-[11px] uppercase tracking-widest text-white/40 mb-1.5 font-semibold font-mono">
+      Phone
+    </p>
+    <Link
+      href="tel:+(923) 0555 2772"
+      className="inline-block text-base text-white/90 font-medium tracking-wide transition-colors duration-300 group-hover:text-primary"
+    >
+      +92 305 5552772
+    </Link>
+  </div>
+  
+  {/* Email Item */}
+  <div className="group relative transition-all duration-300 ease-out hover:translate-x-2">
+    {/* Left accent border stays static in the margin while text moves */}
+    <span className="absolute -left-4 top-0 h-full w-[2px] bg-white/10 transition-all duration-300 ease-out group-hover:bg-primary" />
+    
+    <p className="text-[11px] uppercase tracking-widest text-white/40 mb-1.5 font-semibold font-mono">
+      Email
+    </p>
+    <Link
+      href="mailto:faysal.malick@icloud.com"
+      className="inline-block text-base text-white/90 font-medium tracking-wide break-all transition-colors duration-300 group-hover:text-primary"
+    >
+      faysal.malick@icloud.com
+    </Link>
+  </div>
+</div>
+</div>
               {/* Social Media Links */}
-              <ul className="flex items-center justify-center md:justify-start gap-4">
+              <ul className="flex items-center justify-center md:justify-start gap-6 py-6">
                 <li className="group">
                   <Link href="#" className="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center transition-all duration-300 group-hover:bg-primary group-hover:border-primary group-hover:-translate-y-1">
                     <svg width="18" height="18" viewBox="0 0 25 25" fill="#A3BBD1" className="transition-colors duration-300 group-hover:fill-white">
@@ -96,9 +116,11 @@ const Footer: FC = () => {
                   </Link>
                 </li>
               </ul>
-            </div>
+            
           </div>
 
+
+</div>
           {/* Newsletter Column */}
           <div className="md:col-span-4 col-span-12 py-12 flex flex-col justify-center items-center md:items-end pl-0 md:pl-6">
             <div className="w-full max-w-sm text-center md:text-start">

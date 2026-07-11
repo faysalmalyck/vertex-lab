@@ -45,9 +45,12 @@ const ProgressWork = ({ isColorMode }: ProgressWorkProps) => {
               <span>Capability System</span>
             </div>
 
-            <h2 className="premium-heading pb-6 pt-7 text-left text-4xl font-black tracking-tight leading-[1.1] sm:text-5xl lg:text-6xl">
-              Building Software That Moves Business Forward
-            </h2>
+            <h2 className="py-8 text-3xl font-extrabold tracking-tight text-white sm:text-5xl sm:leading-[1.15]">
+  End-to-end solution for your {" "}
+  <span className="bg-gradient-to-r from-violet-400 via-cyan-400 to-emerald-400 bg-clip-text font-black text-transparent">
+    Business.
+  </span>
+</h2>
 
             <p className="premium-copy text-left text-lg leading-relaxed text-gray-600 dark:text-white/60 max-w-2xl">
               Every solution we deliver is engineered for precision performance, predictable scalability, and intuitive interface layouts, enabling growth engines to scale metrics systematically.

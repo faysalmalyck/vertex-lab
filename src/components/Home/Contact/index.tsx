@@ -26,37 +26,62 @@ const Contactform = () => {
             data-aos-delay="200"
             data-aos-duration="1000"
           >
-            <div className="premium-badge border-white/10 bg-white/10 text-white">
-              <span className="h-2 w-2 rounded-full bg-success" />
-              <span>build everything</span>
-            </div>
-            <h2 className="py-10 text-3xl font-black leading-tight text-white sm:text-5xl">
-              Let&apos;s discuss your project and take it to the next level.
-            </h2>
+           <div>
+  {/* Premium Badge */}
+  <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1.5 text-xs font-semibold tracking-wider text-white backdrop-blur-md uppercase">
+    <span className="relative flex h-2 w-2">
+      <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+      <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+    </span>
+    <span>build everything</span>
+  </div>
 
-            <div className="grid grid-cols-1 gap-4 border-b border-white/10 pb-12 sm:grid-cols-2">
-              <div className="glass-card rounded-2xl p-5">
-                <Phone className="mb-4 h-5 w-5 text-primary" />
-                <span className="text-lg text-white/50">Phone</span>
-                <p className="text-l border-0 bg-transparent text-white">
-                  +92-305-5552772
-                </p>
-              </div>
-              <div className="glass-card rounded-2xl p-5">
-                <Mail className="mb-4 h-5 w-5 text-primary" />
-                <span className="text-lg text-white/50">Email</span>
-                <p className="text-l border-0 bg-transparent text-white">
-                  faysal.malick@icloud.com
-                </p>
-              </div>
-              <div className="glass-card rounded-2xl p-5 sm:col-span-2">
-                <MapPin className="mb-4 h-5 w-5 text-primary" />
-                <span className="text-lg text-white/50">Address</span>
-                <p className="text-l border-0 bg-transparent text-white">
-                  Office No. 194-A, Street No. 7, Sector I-10/3, Islamabad 44000, Pakistan
-                </p>
-              </div>
-            </div>
+  {/* Main Header */}
+  <h2 className="py-8 text-3xl font-extrabold tracking-tight text-white sm:text-5xl sm:leading-[1.15]">
+  Let&apos;s discuss your project and take it to the{" "}
+  <span className="bg-gradient-to-r from-violet-400 via-cyan-400 to-emerald-400 bg-clip-text font-black text-transparent">
+    next level.
+  </span>
+</h2>
+
+  {/* Contact Grid */}
+  <div className="grid grid-cols-1 gap-4 border-b border-white/10 pb-12 sm:grid-cols-2">
+    
+    {/* Phone Card */}
+    <div className="group relative rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+      <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500/10 text-violet-400 border border-violet-500/20 group-hover:scale-110 transition-transform duration-300">
+        <Phone className="h-5 w-5" />
+      </div>
+      <span className="block text-xs font-medium tracking-wider text-white/40 uppercase">Phone</span>
+      <p className="mt-1 font-medium text-white text-base">
+        +92-305-5552772
+      </p>
+    </div>
+
+    {/* Email Card */}
+    <div className="group relative rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)]">
+      <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-cyan-500/10 text-cyan-400 border border-cyan-500/20 group-hover:scale-110 transition-transform duration-300">
+        <Mail className="h-5 w-5" />
+      </div>
+      <span className="block text-xs font-medium tracking-wider text-white/40 uppercase">Email</span>
+      <p className="mt-1 font-medium text-white text-base break-all">
+        faysal.malick@icloud.com
+      </p>
+    </div>
+
+    {/* Address Card */}
+    <div className="group relative rounded-2xl border border-white/[0.06] bg-white/[0.02] p-6 backdrop-blur-xl transition-all duration-300 hover:border-white/20 hover:bg-white/[0.05] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] sm:col-span-2">
+      <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 group-hover:scale-110 transition-transform duration-300">
+        <MapPin className="h-5 w-5" />
+      </div>
+      <span className="block text-xs font-medium tracking-wider text-white/40 uppercase">Address</span>
+      <p className="mt-1 font-medium leading-relaxed text-white text-base">
+        Office No. 194-A, Street No. 7, Sector I-10/3, Islamabad 44000, Pakistan
+      </p>
+    </div>
+
+  </div>
+</div>
 
             <div className="pt-12">
               <p className="pb-4 text-base text-white/50">Trusted by</p>

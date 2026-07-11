@@ -84,17 +84,7 @@ const Hero = () => {
               </Link>
             </div>
 
-            <div className='grid w-full max-w-xl grid-cols-1 gap-2.5 pt-2 sm:grid-cols-3 sm:gap-3'>
-              {['SaaS Architecture', 'AI Implementations', 'Cloud & DevOps'].map((item) => (
-                <div 
-                  key={item} 
-                  className='glass-card flex items-center gap-2 rounded-xl border border-white/5 bg-white/[0.02] px-3.5 py-3 text-xs font-semibold text-slate-700 dark:text-white/80 backdrop-blur-sm'
-                >
-                  <CheckCircle2 className='h-4 w-4 shrink-0 text-cyan-400' />
-                  <span className='truncate'>{item}</span>
-                </div>
-              ))}
-            </div>
+            
 
             <div className='flex items-center gap-4 pt-3 border-t border-white/5 w-full max-w-xl'>
               <div className='flex items-center -space-x-3 isolate'>
