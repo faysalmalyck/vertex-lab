@@ -1,6 +1,7 @@
 import React from 'react';
 import { Globe, Cloud, Brain, GraduationCap, TrendingUp, Users, Sparkles, UserCheck } from 'lucide-react';
 
+
 export default function SoftwareSolutions() {
   const solutions = [
     {
@@ -10,7 +11,7 @@ export default function SoftwareSolutions() {
       iconColor: "text-blue-400 bg-blue-500/10 border-blue-500/20",
       lineColor: "bg-blue-500",
       stats: {
-        text: "40+ Projects Delivered",
+        text: "500+ Projects Delivered",
         icon: TrendingUp,
       }
     },
@@ -21,23 +22,12 @@ export default function SoftwareSolutions() {
       iconColor: "text-purple-400 bg-purple-500/10 border-purple-500/20",
       lineColor: "bg-purple-500",
       stats: {
-        text: "25+ SaaS Platforms",
+        text: "50+ SaaS Platforms",
         icon: Users,
       }
     },
     {
-      title: "AI & Automation Solutions",
-      description: "AI powered workflows, LLMs, intelligent assistants and business automation to boost productivity.",
-      icon: Brain,
-      iconColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
-      lineColor: "bg-emerald-500",
-      stats: {
-        text: "AI Solutions Delivered",
-        icon: Sparkles,
-      }
-    },
-    {
-      title: "EdTech Solutions",
+       title: "EdTech Solutions",
       description: "Interactive learning platforms, LMS, virtual classrooms and educational apps built for scale.",
       icon: GraduationCap,
       iconColor: "text-amber-500 bg-amber-500/10 border-amber-500/20",
@@ -45,7 +35,22 @@ export default function SoftwareSolutions() {
       stats: {
         text: "15+ EdTech Projects",
         icon: UserCheck,
+
+            }
+    },
+    {
+     title: "AI & Automation Solutions",
+      description: "AI powered workflows, LLMs, intelligent assistants and business automation to boost productivity.",
+      icon: Brain,
+      iconColor: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
+      lineColor: "bg-emerald-500",
+      stats: {
+        text: "AI Solutions Delivered",
+        icon: Sparkles,
+
       }
+
+      
     }
   ];
 
@@ -92,7 +97,7 @@ export default function SoftwareSolutions() {
                   </div>
 
                   {/* Card Title */}
-                  <h3 className="mb-3 text-2xl font-black leading-snug tracking-wide text-midnight_text dark:text-white">
+                  <h3 className="mb-3 text-xl font-black leading-snug tracking-wide text-midnight_text dark:text-white">
                     {item.title}
                   </h3>
 

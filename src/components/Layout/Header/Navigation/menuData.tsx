@@ -12,13 +12,13 @@ export const headerData: HeaderItem[] = [
     ],
   },
   {
+    label: "Services",
+    href: "/services",
+  },
+  {
     label: "Work",
     href: "/portfolio",
     submenu: [{ label: "Portfolio", href: "/portfolio" }],
-  },
-  {
-    label: "Services",
-    href: "/services",
   },
   { label: "Contact", href: "/contact" },
 ];

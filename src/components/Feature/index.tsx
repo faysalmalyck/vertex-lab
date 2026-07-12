@@ -1,10 +1,11 @@
-import React from 'react';
+import React from 'react'
+
 
 export default function FeaturesSection() {
   const features = [
     {
       title: "Production Ready Solutions",
-      description: "Built for reliability and performance",
+      description: "We deliver production-ready software engineered for real-world performance, security, and reliability.",
       iconColor: "text-blue-400",
       bgColor: "hover:bg-blue-950/20",
       borderColor: "group-hover:border-blue-500/30",
@@ -16,7 +17,7 @@ export default function FeaturesSection() {
     },
     {
       title: "Scalable Architecture",
-      description: "Designed to grow with your business",
+      description: "Our solutions are built to support increasing users, workloads while maintaining performance and reliability.",
       iconColor: "text-purple-400",
       bgColor: "hover:bg-purple-950/20",
       borderColor: "group-hover:border-purple-500/30",
@@ -28,7 +29,7 @@ export default function FeaturesSection() {
     },
     {
       title: "Agile Development Process",
-      description: "Transparent, fast and collaborative",
+      description: "Our agile approach ensures faster delivery transparent communication with flexibility.",
       iconColor: "text-emerald-400",
       bgColor: "hover:bg-emerald-950/20",
       borderColor: "group-hover:border-emerald-500/30",
@@ -40,7 +41,7 @@ export default function FeaturesSection() {
     },
     {
       title: "Long Term Support",
-      description: "Ongoing support you can depend on",
+      description: "We provide long term support to keep your software secure, updated, and performing reliably as your business grows.",
       iconColor: "text-amber-400",
       bgColor: "hover:bg-amber-950/20",
       borderColor: "group-hover:border-amber-500/30",
@@ -53,13 +54,13 @@ export default function FeaturesSection() {
   ];
 
   return (
-    <div className="w-full max-w-6xl mx-auto">
+    <div className="w-full max-w-6xl mx-auto px-4">
       {/* Header Layout Container */}
-      <div className="text-center mb-12 max-w-3xl mx-auto px-4">
+      <div className="text-center mb-12 max-w-3xl py-6 mx-auto">
         <h2 className="mb-4 text-3xl font-black tracking-tight text-slate-900 dark:text-white md:text-4xl">
-  Why Leading Teams Trust Our Code
-</h2>
-        <p className="text-slate-450 text-base md:text-lg leading-relaxed text-slate-400">
+          Why Leading Teams Trust Our Code
+        </h2>
+        <p className="text-base md:text-lg leading-relaxed text-slate-600 dark:text-slate-400">
           We combine transparent agile delivery loops with production-grade engineering principles to launch high-performance platforms that capture market value.
         </p>
       </div>
@@ -70,13 +71,13 @@ export default function FeaturesSection() {
           {features.map((feature, index) => (
             <div 
               key={index} 
-              className={`group flex items-start space-x-4 p-6 md:p-8 transition-all duration-300 ${feature.bgColor}`}
+              className={`group flex flex-col items-center text-center p-6 md:p-8 transition-all duration-300 ${feature.bgColor}`}
             >
-              <div className={`${feature.iconColor} p-2 rounded-xl bg-slate-900 border border-slate-800 transition-colors duration-300 ${feature.borderColor} shrink-0`}>
+              <div className={`${feature.iconColor} p-2 mb-4 rounded-xl bg-slate-900 border border-slate-800 transition-colors duration-300 ${feature.borderColor} shrink-0`}>
                 {feature.icon}
               </div>
               <div>
-                <h3 className="text-white text-base font-semibold tracking-wide mb-1.5 leading-snug group-hover:text-white transition-colors">
+                <h3 className="text-white text-base font-semibold tracking-wide mb-2.5 leading-snug transition-colors">
                   {feature.title}
                 </h3>
                 <p className="text-slate-400 text-sm leading-relaxed group-hover:text-slate-300 transition-colors">
