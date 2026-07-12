@@ -3,22 +3,22 @@ import { getImgPath } from "@/utils/image";
 export const count = [
   {
     icon: getImgPath("/images/counter/star.svg"),
-    value: "4.8",
+    value: "4.9",
     description: "Out of 5 stars from 3896 reviews on Google platform",
   },
   {
     icon: getImgPath("/images/counter/admin.svg"),
-    value: "364",
+    value: "462",
     description: "Client testimonials received in the year 2025",
   },
   {
     icon: getImgPath("/images/counter/bag.svg"),
-    value: "30M+",
+    value: "45M+",
     description: "Revenue generated through new projects & marketing",
   },
   {
     icon: getImgPath("/images/counter/arrow.svg"),
-    value: "98 %",
+    value: "98%",
     description: "Client Retention Through Commitment to Quality",
   },
 ];

@@ -18,7 +18,7 @@ const terminalLines = [
 ]
 
 const heroMetrics = [
-  ['$32M+', 'SaaS Value'],
+  ['32M+', 'SaaS Value'],
   ['99.9%', 'Uptime'],
   ['4.9/5', 'Rating'],
 ]
