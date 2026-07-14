@@ -62,7 +62,7 @@ export default function SoftwareSolutions() {
         {/* Header Section */}
         <div className="mb-16 max-w-3xl" data-aos="fade-up" data-aos-duration="1000">
           <div className="premium-badge w-fit">
-              <span className="h-2 w-2 rounded-full bg-success"></span>
+              <span className="h-2 w-1 rounded-full bg-success"></span>
               <span>Software Solution</span>
             </div>
           <h2 className="py-8 text-3xl font-extrabold tracking-tight text-midnight_text dark:text-white sm:text-5xl sm:leading-[1.15]">
@@ -97,7 +97,7 @@ export default function SoftwareSolutions() {
                   </div>
 
                   {/* Card Title */}
-                  <h3 className="mb-3 text-xl font-black leading-snug tracking-wide text-midnight_text dark:text-white">
+                  <h3 className="mb-3 text-lg font-black leading-snug text-midnight_text dark:text-white">
                     {item.title}
                   </h3>
 
