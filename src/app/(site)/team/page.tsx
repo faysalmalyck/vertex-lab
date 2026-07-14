@@ -15,12 +15,12 @@ const ceoMember = {
   role: "CEO & Founder",
   description:
     "Leading the company with strategic vision, innovation, and a commitment to sustainable growth.Guiding teams and strategy to deliver exceptional digital solutions and lasting client value.",
-  image: "/images/hero/faysal.png",
+  image: "/images/hero/faysal.webp",
 };
 
 const engineeringMembers = [
   {
-    name: "Barkat",
+    name: "Barkat Ullah",
     role: "CTO & Sr. Software Engineer",
     description:
       "Leading engineering teams to build secure, scalable, and high performance software..",
@@ -31,14 +31,14 @@ const engineeringMembers = [
     role: "IOS App Engineer",
     description:
       "Developing high performance iOS apps for every stage of growth.",
-    image: "/images/hero/saad.png",
+    image: "/images/hero/saad.webp",
   },
   {
     name: "Usama Ishaq",
     role: "Andriod/IOS App Engineer",
     description:
       "Designing responsive Android apps that deliver exceptional experiences.",
-    image: "/images/hero/usama.png",
+    image: "/images/hero/usama.webp",
   },
 ];
 
@@ -48,9 +48,9 @@ const salesMembers = [
     role: "Account Executive (EdTech)",
     description:
       "Helping education partners achieve growth through tailored technology solutions.",
-    image: "/images/hero/saqib.png",
+    image: "/images/hero/saqib.webp",
   },
-   {
+  {
     name: "Arshad Nazir",
     role: "General Manager",
     description:
@@ -62,7 +62,7 @@ const salesMembers = [
     role: "Account Executive",
     description:
       "Manages enterprise client success, product positioning, and strategic alignment.",
-    image: "/images/hero/afzal.png",
+    image: "/images/hero/afzal.webp",
   },
 ];
 

@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useId, useState } from 'react';
 import Link from 'next/link';
 import { HeaderItem } from '../../../../types/menu';
 import { usePathname } from 'next/navigation';
@@ -13,6 +13,7 @@ const MobileHeaderLink: React.FC<MobileHeaderLinkProps> = ({
   onNavigate,
 }) => {
   const [submenuOpen, setSubmenuOpen] = useState(false);
+  const submenuId = useId();
 
   const handleToggle = () => {
     setSubmenuOpen(!submenuOpen);
@@ -30,7 +31,9 @@ const MobileHeaderLink: React.FC<MobileHeaderLinkProps> = ({
         <button
           type="button"
           onClick={handleToggle}
-          className={`flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-sm font-semibold text-slate-700 transition-all duration-300 hover:bg-primary/10 hover:text-primary dark:text-white/70 dark:hover:bg-white/10 dark:hover:text-white ${isActive ? 'bg-gradient-to-r from-primary to-Sky-blue-mist text-white shadow-lg shadow-primary/25 dark:text-white' : ''}`}
+          aria-expanded={submenuOpen}
+          aria-controls={submenuId}
+          className={`flex min-h-12 w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-sm font-semibold text-slate-700 transition-all duration-300 hover:bg-primary/10 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary/30 dark:text-white/75 dark:hover:bg-white/10 dark:hover:text-white ${isActive ? 'bg-gradient-to-r from-primary to-Sky-blue-mist text-white shadow-lg shadow-primary/25 dark:text-white' : ''}`}
         >
           {item.label}
           <svg
@@ -47,13 +50,27 @@ const MobileHeaderLink: React.FC<MobileHeaderLinkProps> = ({
         <Link
           href={item.href}
           onClick={onNavigate}
-          className={`flex w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-sm font-semibold text-slate-700 transition-all duration-300 hover:bg-primary/10 hover:text-primary dark:text-white/70 dark:hover:bg-white/10 dark:hover:text-white ${isActive ? 'bg-gradient-to-r from-primary to-Sky-blue-mist text-white shadow-lg shadow-primary/25 dark:text-white' : ''}`}
+          className={`flex min-h-12 w-full items-center justify-between rounded-2xl px-4 py-3 text-left text-sm font-semibold text-slate-700 transition-all duration-300 hover:bg-primary/10 hover:text-primary focus:outline-none focus:ring-2 focus:ring-primary/30 dark:text-white/75 dark:hover:bg-white/10 dark:hover:text-white ${isActive ? 'bg-gradient-to-r from-primary to-Sky-blue-mist text-white shadow-lg shadow-primary/25 dark:text-white' : ''}`}
         >
           {item.label}
         </Link>
       )}
       {submenuOpen && item.submenu && (
-        <div className="mt-2 w-full rounded-2xl border border-slate-950/10 bg-white/80 p-2 shadow-sm backdrop-blur-xl dark:border-white/10 dark:bg-white/5">
+        <div
+          id={submenuId}
+          className="mt-2 w-full rounded-2xl border border-slate-200 bg-slate-50 p-2 shadow-sm dark:border-white/10 dark:bg-white/[0.06]"
+        >
+          <Link
+            href={item.href}
+            onClick={onNavigate}
+            className={`block rounded-xl px-4 py-2.5 text-sm font-semibold transition-all duration-300 ${
+              path === itemPath
+                ? "bg-primary text-white"
+                : "text-slate-600 hover:bg-primary/10 hover:text-primary dark:text-white/70 dark:hover:bg-white/10 dark:hover:text-white"
+            }`}
+          >
+            {item.label}
+          </Link>
           {item.submenu.map((subItem, index) => (
             <Link
               key={index}

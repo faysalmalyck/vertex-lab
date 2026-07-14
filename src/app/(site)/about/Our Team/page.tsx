@@ -15,7 +15,7 @@ const ceoMember = {
   role: "CEO & Founder",
   description:
     "Leading the company with strategic vision, innovation, and a commitment to sustainable growth.Guiding teams and strategy to deliver exceptional digital solutions and lasting client value.",
-  image: "/images/hero/faysal.png",
+  image: "/images/hero/faysal.webp",
 };
 
 const engineeringMembers = [
@@ -36,7 +36,7 @@ const engineeringMembers = [
     name: "Usama Ishaq",
     role: "Andriod/IOS App Engineer",
     description: "Designing responsive Android apps that deliver exceptional experiences.",
-    image: "/images/hero/usama.png",
+    image: "/images/hero/usama.webp",
   },
 ];
 
@@ -46,7 +46,7 @@ const salesMembers = [
     role: "Account Executive (EdTech)",
     description:
       "Helping education partners achieve growth through tailored technology solutions.",
-    image: "/images/hero/saqib.png",
+    image: "/images/hero/saqib.webp",
   },
   
   {

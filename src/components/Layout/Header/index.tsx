@@ -24,38 +24,60 @@ const Header: React.FC = () => {
     setSticky(window.scrollY >= 80);
   };
 
+  const closeMobileMenu = () => setNavbarOpen(false);
+
   const handleClickOutside = (event: MouseEvent) => {
     if (
       mobileMenuRef.current &&
       !mobileMenuRef.current.contains(event.target as Node) &&
       navbarOpen
     ) {
-      setNavbarOpen(false);
+      closeMobileMenu();
     }
   };
 
   useEffect(() => {
+    const handleEscape = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        closeMobileMenu();
+      }
+    };
+
     window.addEventListener("scroll", handleScroll);
     document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("keydown", handleEscape);
     return () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscape);
     };
   }, [navbarOpen]);
 
   useEffect(() => {
+    const originalBodyOverflow = document.body.style.overflow;
+    const originalHtmlOverflow = document.documentElement.style.overflow;
+
     if (navbarOpen) {
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "";
+      document.body.style.overflow = originalBodyOverflow;
+      document.documentElement.style.overflow = originalHtmlOverflow;
     }
+
+    return () => {
+      document.body.style.overflow = originalBodyOverflow;
+      document.documentElement.style.overflow = originalHtmlOverflow;
+    };
   }, [navbarOpen]);
 
   const authDialog = useContext(AuthDialogContext);
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full px-3 py-4 transition-all duration-500 ${
+      className={`fixed top-0 w-full px-3 py-4 transition-all duration-500 ${
+        navbarOpen ? "z-[1000]" : "z-50"
+      } ${
         sticky
           ? "bg-white/75 shadow-[0_16px_60px_rgba(15,23,42,0.10)] backdrop-blur-2xl dark:bg-darklight/80 dark:shadow-dark-md"
           : "bg-transparent"
@@ -115,24 +137,29 @@ const Header: React.FC = () => {
         <button
           type="button"
           aria-label="Close mobile menu overlay"
-          className="fixed left-0 top-0 z-40 h-full w-full bg-slate-950/60 backdrop-blur-sm"
-          onClick={() => setNavbarOpen(false)}
+          className="fixed inset-0 z-[998] h-dvh w-screen bg-slate-950/70 backdrop-blur-md lg:hidden"
+          onClick={closeMobileMenu}
         />
       )}
 
       <div
         ref={mobileMenuRef}
-        className={`fixed right-0 top-0 z-50 h-full w-full max-w-sm transform border-l border-white/20 bg-white/90 shadow-2xl backdrop-blur-2xl transition-transform duration-500 lg:hidden dark:bg-darkmode/95 ${
+        role="dialog"
+        aria-modal="true"
+        aria-label="Mobile navigation"
+        className={`fixed inset-y-0 right-0 z-[999] flex h-dvh max-h-dvh w-full transform flex-col overflow-hidden border-l border-slate-200 bg-white shadow-2xl transition-transform duration-500 sm:max-w-sm lg:hidden dark:border-white/10 dark:bg-darkmode ${
           navbarOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
-        <div className="flex items-center justify-between border-b border-slate-200/70 p-5 dark:border-white/10">
+        <div className="shrink-0 border-b border-slate-200/80 bg-white px-5 py-5 dark:border-white/10 dark:bg-darkmode">
+          <div className="flex items-center justify-between">
           <h2 className="text-lg font-black text-midnight_text dark:text-white">
             Menu
           </h2>
           <button
-            onClick={() => setNavbarOpen(false)}
+            onClick={closeMobileMenu}
             aria-label="Close mobile menu"
+            className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-slate-50 text-slate-900 transition-colors duration-300 hover:border-primary/30 hover:text-primary dark:border-white/10 dark:bg-white/10 dark:text-white dark:hover:text-Sky-blue-mist"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -151,27 +178,28 @@ const Header: React.FC = () => {
               />
             </svg>
           </button>
+          </div>
         </div>
-        <nav className="flex max-h-[calc(100vh-86px)] flex-col items-start gap-2 overflow-y-auto p-5">
+        <nav className="flex min-h-0 flex-1 flex-col items-start gap-3 overflow-y-auto bg-white p-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] dark:bg-darkmode">
           {headerData.map((item, index) => (
             <MobileHeaderLink
               key={index}
               item={item}
-              onNavigate={() => setNavbarOpen(false)}
+              onNavigate={closeMobileMenu}
             />
           ))}
-          <div className="mt-5 flex w-full flex-col gap-3">
+          <div className="mt-4 flex w-full flex-col gap-3 border-t border-slate-200 pt-5 dark:border-white/10">
             <Link
               href="/contact"
               className="rounded-2xl border border-primary/30 px-4 py-3 text-center font-bold text-primary transition-all duration-300 hover:border-Sky-blue-mist/50 hover:bg-primary/10 hover:text-primary dark:text-white"
-              onClick={() => setNavbarOpen(false)}
+              onClick={closeMobileMenu}
             >
               Contact us
             </Link>
             <Link
               href="/portfolio"
               className="premium-gradient-button rounded-2xl px-4 py-3 text-center font-bold"
-              onClick={() => setNavbarOpen(false)}
+              onClick={closeMobileMenu}
             >
               View work
             </Link>

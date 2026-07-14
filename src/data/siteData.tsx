@@ -34,7 +34,7 @@ export const Progress = [
 
 export const portfolioinfo = [
   {
-    image: getImgPath("/images/portfolio/Dierk.png"),
+    image: getImgPath("/images/portfolio/Dierk.webp"),
     alt: "Dierks Company",
     title: "Dierks Company",
     slug: "fusion-dynamics",
@@ -43,7 +43,7 @@ export const portfolioinfo = [
     link: "https://www.dierks.company/",
   },
   {
-    image: getImgPath("/images/portfolio/VanGuard.png"),
+    image: getImgPath("/images/portfolio/VanGuard.webp"),
     alt: "Portfolio",
     title: "VanGuard",
     slug: "rocket-squared",
@@ -52,7 +52,7 @@ export const portfolioinfo = [
     link: "https://investor.vanguard.com/",
   },
   {
-    image: getImgPath("/images/portfolio/Doctor.png"),
+    image: getImgPath("/images/portfolio/Doctor.webp"),
     alt: "Portfolio",
     title: "Doctor SaaS",
     slug: "Mars",
@@ -61,7 +61,7 @@ export const portfolioinfo = [
     link: "https://clinicos.codeshop.biz/dashboard/",
   },
   {
-    image: getImgPath("/images/portfolio/Gazalle.png"),
+    image: getImgPath("/images/portfolio/Gazalle.webp"),
     alt: "Portfolio",
     title: "Gazelle",
     slug: "Cozycasa",
@@ -70,7 +70,7 @@ export const portfolioinfo = [
     link: "https://gazelle.com/",
   },
   {
-    image: getImgPath("/images/portfolio/ServCorp.png"),
+    image: getImgPath("/images/portfolio/Servcorp.webp"),
     alt: "ServCorp",
     title: "ServCorp",
     slug: "fusion-dynamics",
@@ -79,7 +79,7 @@ export const portfolioinfo = [
     link: "https://www.servcorp.ae/en/",
   },
   {
-    image: getImgPath("/images/portfolio/Haze.png"),
+    image: getImgPath("/images/portfolio/Haze.webp"),
     alt: "Portfolio",
     title: "Haze & Hue",
     slug: "rocket-squared",
@@ -88,7 +88,7 @@ export const portfolioinfo = [
     link: "https://hazeandhues.com/",
   },
   {
-    image: getImgPath("/images/portfolio/Jubilee.png"),
+    image: getImgPath("/images/portfolio/Jubilee.webp"),
     alt: "Portfolio",
     title: "Jubilee Gift Shop",
     slug: "innovate-x-ventures",
@@ -97,7 +97,7 @@ export const portfolioinfo = [
     link: "https://jubileegiftshop.com/",
   },
   {
-    image: getImgPath("/images/portfolio/Beauty.png"),
+    image: getImgPath("/images/portfolio/Beauty.webp"),
     alt: "Portfolio",
     title: "Beautox Bar",
     slug: "rocket-squared",
@@ -106,7 +106,7 @@ export const portfolioinfo = [
     link: "https://www.beautoxbar.com/",
   },
   {
-    image: getImgPath("/images/portfolio/AnganStay.png"),
+    image: getImgPath("/images/portfolio/AnganStay.webp"),
     alt: "Portfolio",
     title: "AnganStay",
     slug: "everyday-humans",
@@ -115,7 +115,7 @@ export const portfolioinfo = [
     link: "https://development.anganstay.com/",
   },
   {
-    image: getImgPath("/images/portfolio/DCI.png"),
+    image: getImgPath("/images/portfolio/DCI.webp"),
     alt: "Portfolio",
     title: "DCI",
     slug: "panda-logo",
