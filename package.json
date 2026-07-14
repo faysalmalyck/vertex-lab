@@ -1,13 +1,15 @@
+
 {
     "name": "vertex_project",
     "version": "1.0.1",
     "private": true,
     "scripts": {
         "dev": "next dev",
-        "build": "next build",
+        "build": "next build && next export",
         "export": "next build",
         "start": "next start",
         "lint": "next lint"
+        
     },
     "dependencies": {
         "@iconify/icons-ion": "^1.2.10",
@@ -42,5 +44,6 @@
         "postcss": "^8",
         "tailwindcss": "^4.0.0",
         "typescript": "^5"
-    }
+    },
+      
 }
