@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { ArrowRight, CheckCircle2, Sparkles, Terminal, Activity } from 'lucide-react'
+import { ArrowRight, Sparkles, Terminal, Activity } from 'lucide-react'
 import { getImgPath } from '@/utils/image'
 
 const terminalLines = [
@@ -40,7 +40,7 @@ const parseMetricValue = (value: string) => {
   }
 }
 
-const AnimatedMetric = ({ value, delay = 0 }: { value: string; delay?: number }) => {
+const AnimatedMetric = ({ value, delay = 0, isMobile = false }: { value: string; delay?: number; isMobile: boolean }) => {
   const metricRef = useRef<HTMLSpanElement | null>(null)
   const [hasStarted, setHasStarted] = useState(false)
   const [currentValue, setCurrentValue] = useState(0)
@@ -51,16 +51,14 @@ const AnimatedMetric = ({ value, delay = 0 }: { value: string; delay?: number })
 
     if (!element) return
 
-    const prefersReducedMotion = window.matchMedia(
-      '(prefers-reduced-motion: reduce)'
-    ).matches
-
-    if (prefersReducedMotion) {
+    // On mobile, bypass observer completely and show the final numbers immediately
+    if (isMobile || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       setCurrentValue(parsedValue.target)
       setHasStarted(true)
       return
     }
 
+    // Lower threshold to 0.1 so it triggers immediately when even slightly visible
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
@@ -68,16 +66,16 @@ const AnimatedMetric = ({ value, delay = 0 }: { value: string; delay?: number })
           observer.disconnect()
         }
       },
-      { threshold: 0.65 }
+      { threshold: 0.1 }
     )
 
     observer.observe(element)
 
     return () => observer.disconnect()
-  }, [parsedValue.target])
+  }, [parsedValue.target, isMobile])
 
   useEffect(() => {
-    if (!hasStarted) return
+    if (!hasStarted || isMobile) return
 
     let animationFrame = 0
     let timeoutId: ReturnType<typeof setTimeout>
@@ -106,7 +104,7 @@ const AnimatedMetric = ({ value, delay = 0 }: { value: string; delay?: number })
       clearTimeout(timeoutId)
       cancelAnimationFrame(animationFrame)
     }
-  }, [delay, hasStarted, parsedValue.target])
+  }, [delay, hasStarted, parsedValue.target, isMobile])
 
   return (
     <span ref={metricRef} aria-label={value}>
@@ -120,21 +118,34 @@ const AnimatedMetric = ({ value, delay = 0 }: { value: string; delay?: number })
 const Hero = () => {
   const [visibleLines, setVisibleLines] = useState<string[]>([])
   const [activeIndex, setActiveIndex] = useState(0)
+  const [mounted, setMounted] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
+    const mobileCheck = window.innerWidth < 768
+    setIsMobile(mobileCheck)
+
+    // Instantly load the first 3 lines on mount so the terminal is never blank
+    setVisibleLines(terminalLines.slice(0, 3))
+    setActiveIndex(3)
+  }, [])
+
+  useEffect(() => {
+    if (!mounted) return
+
     const interval = setInterval(() => {
       setVisibleLines((prev) => {
         const nextLine = terminalLines[activeIndex]
-        // Keep the view bounded to the last 5 logs for cleanliness
         const updated = [...prev, nextLine]
         if (updated.length > 5) updated.shift()
         return updated
       })
       setActiveIndex((prevIndex) => (prevIndex + 1) % terminalLines.length)
-    }, 2200)
+    }, isMobile ? 3000 : 2200)
 
     return () => clearInterval(interval)
-  }, [activeIndex])
+  }, [activeIndex, mounted, isMobile])
 
   return (
     <section className='premium-shell premium-mesh relative overflow-hidden pb-24 pt-28 text-white sm:pt-36 md:pb-32 md:pt-48'>
@@ -149,12 +160,7 @@ const Hero = () => {
         <div className='grid grid-cols-12 gap-y-16 md:gap-x-8 lg:gap-x-16 items-center'>
           
           {/* Left Block: Core Value Proposition */}
-          <div
-            className='col-span-12 md:col-span-7 lg:col-span-6 space-y-6 md:space-y-8 flex flex-col items-start justify-center'
-            data-aos='fade-right'
-            data-aos-delay='200'
-            data-aos-duration='1000'
-          >
+          <div className='col-span-12 md:col-span-7 lg:col-span-6 space-y-6 md:space-y-8 flex flex-col items-start justify-center'>
             <div className='premium-badge flex items-center gap-2 px-3 py-1.5 text-[11px] font-medium tracking-wide border border-white/10 bg-white/[0.03] backdrop-blur-md rounded-full text-white/90'>
               <Sparkles className='h-3.5 w-3.5 text-cyan-400 animate-pulse' />
               <span>Next-Gen Engineering Studio</span>
@@ -184,8 +190,6 @@ const Hero = () => {
               </Link>
             </div>
 
-            
-
             <div className='flex items-center gap-4 pt-3 border-t border-white/5 w-full max-w-xl'>
               <div className='flex items-center -space-x-3 isolate'>
                 {[1, 2, 3].map((num) => (
@@ -195,7 +199,7 @@ const Hero = () => {
                     alt={`Vertex operator feedback avatar ${num}`}
                     width={40}
                     height={40}
-                    quality={100}
+                    priority
                     className='h-9 w-9 rounded-full border-2 border-[#070A12] object-cover ring-1 ring-white/10'
                   />
                 ))}
@@ -232,23 +236,24 @@ const Hero = () => {
 
               {/* Dynamic Console Feed */}
               <div className='font-mono text-xs space-y-2.5 py-4 flex-grow min-h-[160px] flex flex-col justify-end'>
-                {visibleLines.length === 0 && (
+                {!mounted ? (
                   <p className='text-white/30 animate-pulse'>Awaiting runtime logs...</p>
-                )}
-                {visibleLines.map((line, idx) => {
-                  let colorClass = 'text-white/80'
-                  if (line.startsWith('SYSTEM:')) colorClass = 'text-primary'
-                  if (line.startsWith('SECURE:') || line.endsWith('OK') || line.endsWith('100%')) colorClass = 'text-emerald-400'
-                  if (line.startsWith('NETWORK:')) colorClass = 'text-cyan-400'
-                  if (line.startsWith('MONITOR:')) colorClass = 'text-amber-400'
+                ) : (
+                  visibleLines.map((line, idx) => {
+                    let colorClass = 'text-white/80'
+                    if (line.startsWith('SYSTEM:')) colorClass = 'text-primary'
+                    if (line.startsWith('SECURE:') || line.endsWith('OK') || line.endsWith('100%')) colorClass = 'text-emerald-400'
+                    if (line.startsWith('NETWORK:')) colorClass = 'text-cyan-400'
+                    if (line.startsWith('MONITOR:')) colorClass = 'text-amber-400'
 
-                  return (
-                    <div key={idx} className={`flex items-start gap-2 transition-all duration-300 transform translate-y-0 opacity-100 ${colorClass}`}>
-                      <span className='text-white/30 shrink-0 select-none'>&gt;</span>
-                      <p className='leading-relaxed tracking-tight break-all'>{line}</p>
-                    </div>
-                  )
-                })}
+                    return (
+                      <div key={idx} className='flex items-start gap-2 transition-all duration-300 transform translate-y-0 opacity-100'>
+                        <span className='text-white/30 shrink-0 select-none'>&gt;</span>
+                        <p className={`leading-relaxed tracking-tight break-all ${colorClass}`}>{line}</p>
+                      </div>
+                    )
+                  })
+                )}
                 {/* Active Typing Cursor Simulator */}
                 <div className='flex items-center gap-1 text-white/40'>
                   <span className='text-white/30'>&gt;</span>
@@ -272,7 +277,7 @@ const Hero = () => {
               {heroMetrics.map(([value, label], index) => (
                 <div key={label} className='space-y-0.5 border-r border-white/5 last:border-0'>
                   <p className='text-sm font-black tracking-tight text-white sm:text-lg'>
-                    <AnimatedMetric value={value} delay={index * 140} />
+                    <AnimatedMetric value={value} delay={index * 140} isMobile={isMobile} />
                   </p>
                   <p className='text-[9px] font-bold uppercase tracking-widest text-secondary dark:text-white/40'>{label}</p>
                 </div>

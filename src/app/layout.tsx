@@ -11,7 +11,7 @@ import { AuthDialogProvider } from "./context/AuthDialogContext";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://vertex.agency"),
+  metadataBase: new URL("https://vertexinnovation.vercel.app"),
   applicationName: "Vertex",
   title: {
     default: "Vertex | Digital Solutions Agency",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     siteName: "Vertex",
     images: [
       {
-        url: "/images/brand/vertex-og.png",
+        url: "/images/brand/vertex-mark.png",
         width: 1536,
         height: 1024,
         alt: "Vertex logo",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     title: "Vertex | Digital Solutions Agency",
     description:
       "Premium digital solutions agency for modern software, SaaS, AI, and cloud delivery.",
-    images: ["/images/brand/vertex-og.png"],
+    images: ["/images/brand/vertex-mark.png"],
   },
 };
 
