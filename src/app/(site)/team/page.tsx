@@ -50,7 +50,13 @@ const salesMembers = [
       "Helping education partners achieve growth through tailored technology solutions.",
     image: "/images/hero/saqib.png",
   },
-
+   {
+    name: "Arshad Nazir",
+    role: "General Manager",
+    description:
+      "is responsible for leading the entire sales function of an organization. Typical responsibilities.",
+    image: "/images/hero/Arshad.jpg",
+  },
   {
     name: "Afzal Ashraf",
     role: "Account Executive",
